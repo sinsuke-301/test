@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOG music</title>
+    <link rel="stylesheet" href="./css/play.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        #progressBar {
+            width: 600px;
+            height: 30px;
+            background: #e9e9e9;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        #playProgressBar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #20bfd8;
+            height: 30px;
+            width: 0px;
+        }
+
+        #ptxt {
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 30px;
+            z-index: 10;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 音乐播放页面 -->
+    <!-- 头部 -->
+    <header class="top">
+        <h1>DOG音乐</h1>
+        <div class="user">
+            <!-- 用户头像和用户名 -->
+            <p id="user_name"></p>
+            <img src="" alt="" id="user_img">
+        </div>
+    </header>
+    <!-- 歌词歌曲部分 -->
+    <section>
+        <!-- 歌曲光碟 -->
+        <div class="album">
+            <img src="" alt="" id="album_img">
+        </div>
+    </section>
+
+    <!-- 下端播放栏 -->
+    <!-- 音乐播放 -->
+    <section class="music_play">
+        <audio src="" id="mym"></audio>
+        <!-- 歌曲名字和封面 -->
+        <div class="song_box">
+            <img src="" alt="" class="music_img">
+            <span id="song_name"></span>
+            <span id="singer_name"></span>
+        </div>
+        <!-- 播放图标 位于头部-->
+        <div class="broadcast">
+            <!-- 上一首图标 -->
+            <span class="rewind" id="rewind">上一首</span>
+            <span class="play" id="play">▶</span>
+            <!-- 下一首图标 -->
+            <span class="forward" id="forward">下一首</span>
+        </div>
+        <!-- 进度条 -->
+        <div class="jindu_bg" id="jindu_bg">
+            <div class="jindu_color" id="jindu_color">
+            </div>
+        </div>
+        <!-- 音量图标 -->
+        <div id="voice_box">
+            <span id="jy">静音</span>
+            <div id="voice">
+                <span id="voice_span"></span>
+            </div>
+            <p id="p1"></p>
+        </div>
+        <!-- 显示的时间 -->
+        <div class="music_time">
+            <span class="current" id="current">00:00</span>
+            <span class="xian">/</span>
+            <span class="totalTime" id="totalTime">00:00</span>
+        </div>
+    </section>
+    <script src="./js/play.js"></script>
+    <script src="./js/server.js"></script>
+    <script src="./js/my_music.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+/* body {
+    height: 5000px;
+} */
+/* 个人主页部分 */
+.Mymusic {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    margin: 0 auto;
+    margin-top: -52px;
+    padding-top: 50px;
+    background: url(../images/background.jpg);
+}
+.Mymusic_box {
+    width: 1200px;
+    height: 380px;
+    margin: 0 auto;
+}
+.person {
+    width: 200px;
+    height: 200px;
+    /* background-color: aqua; */
+    margin: 0 auto;
+}
+.person img {
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    margin: 20px 0 10px 45px;
+}
+.person .name {
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+.person .fans {
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 0;
+}
+.Mymusic ul li .selected {
+    color: #94ebff;
+}
+.Mymusic_box ul {
+    margin: 80px 0 0 0;
+}
+.Mymusic_box ul li {
+    float: left;
+    margin: 0 25px;
+}
+.Mymusic_box ul li a{
+    font-size: 18px;
+    color: #ffffff;
+}
+.Mymusic_box ul li a:hover {
+    color: #94ebff;
+}
+/* 喜欢的音乐模块 */
+.fav_music {
+    width: 1200px;
+    height: 800px;
+    background-color: antiquewhite;
+    margin: 50px auto;
+}
+.fav_music .start {
+    padding: 10px;
+    border: 1px solid grey;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+}
+.fav_music .start:hover {
+    color: #ffffff;
+    background-color: #408db1;
+}
+.fav_head {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 50px;
+    margin: 10px 0 0 0;
+}
+.my_songlist li {
+    height: 50px;
+    margin: 0 0 20px 0;
+}
+.my_songlist span{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    /* 2.文字溢出强制一行内显示 */
+    white-space: nowrap;
+    /* 3.溢出部分隐藏 */
+    overflow: hidden;
+    /* 文字溢出以省略号显示 */
+    text-overflow: ellipsis;
+}
+.my_songlist span:hover {
+    color: #94ebff;
+    cursor: pointer;
+}
+.num {
+    width: 50px;
+    text-align: center;
+}
+ .song_name{
+    width: 530px;
+    margin: 0 0 0 -5px;
+    background-color: beige;
+}
+ .ar_name {
+    width: 285px;
+    background-color: cadetblue;
+}
+ .al_name {
+    width: 200px;
+    background-color: darkgoldenrod;
+}
+/* 我创建的歌单部分 */
+.songlist {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
