@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 行高的继承  */
+        /* 可根据字体大小变化自动调节行高 */
+        body {
+            font: 12px/1.5 '微软雅黑';
+            color: chocolate;
+        }
+
+        div {
+            /* 子元素继承了父元素body的行高1.5 */
+            /* 这个1.5就是当前元素文字大小font-size的1.5倍 此时行高为21 */
+            font-size: 14px;
+        }
+
+        p {
+            /* 1.5*16=24 当前的行高*/
+            font-size: 16px;
+        }
+
+        /* li没有手动指定文字大小，则会继承父元素的文字大小 body 12px 所有li的文字大小均为12px */
+        /* 当前li的行高就是12*1.5=18 */
+    </style>
+</head>
+
+<body>
+    <div>千里之行始于足下</div>
+    <p>行远自迩登高自卑</p>
+    <ul>
+        <li>我没有指定文字大小</li>
+    </ul>
+</body>
+
+</html>

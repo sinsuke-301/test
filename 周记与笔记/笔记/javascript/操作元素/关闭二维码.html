@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+        }
+
+        .box .close-btn {
+            position: absolute;
+            top: 0;
+            left: 65px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        淘宝二维码
+        <img src="clo.png" alt="" class="close-btn">
+        <img src="ma.png" alt="">
+
+    </div>
+    <script>
+        var btn = document.querySelector('.close-btn');
+        var box = document.querySelector('.box');
+        btn.onclick = function () {
+            box.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

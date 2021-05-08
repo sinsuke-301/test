@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定定位</title>
+    <style>
+        .tu {
+            position: fixed;
+            /* 走浏览器宽度的一半 */
+            left: 50%;
+            /* 利用margin走版心盒子宽度的一半 */
+            margin-left: 405px;
+            width: 50px;
+            height: 200px;
+            background-color: cornflowerblue;
+        }
+
+        /* 固定定位：以浏览器可视窗口移动位置 */
+        /* 与父元素无关 */
+        /* 不随滚动条的滚动而滚动 */
+        /* 不占有原先位置 */
+        /* 特殊的绝对定位 */
+        .box {
+            width: 800px;
+            height: 1400px;
+            background-color: coral;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tu"></div>
+    <div class="box">版心盒子 800px</div>
+</body>
+
+</html>

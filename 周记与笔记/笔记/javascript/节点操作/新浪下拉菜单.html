@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav {
+            width: 600px;
+            height: 30px;
+            float: left;
+            background-color: #eeeeee;
+            margin-left: 30px;
+        }
+
+        .nav ul {
+            display: none;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .nav li {
+            float: left;
+            width: 70px;
+            font-size: 80%;
+            font-size: 14px;
+            margin-top: 6px;
+            background-color: #eee;
+        }
+
+        .nav ul li {
+            width: 100%;
+            border-bottom: 1px solid #FECC5B;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <p>登录</p>
+        </li>
+        <li>
+            <p>微博</p>
+            <ul>
+                <li>
+                    <p>私信</p>
+                </li>
+                <li>
+                    <p>评论</p>
+                </li>
+                <li>
+                    <p>@我</p>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p>博客</p>
+            <ul>
+                <li>
+                    <p>博客评论</p>
+                </li>
+                <li>
+                    <p>未读提醒</p>
+                </li>
+
+            </ul>
+        </li>
+
+
+        <li>
+            <p>邮箱</p>
+            <ul>
+                <li>
+                    <p>免费邮箱</p>
+                </li>
+                <li>
+                    <p>vip邮箱</p>
+                </li>
+                <li>
+                    <p>企业邮箱</p>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+    <script>
+        //1.获得元素 
+        var nav = document.querySelector('.nav');
+        var lis = nav.children;
+
+        //2.循环注册事件
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+                this.children[1].style.display = 'block';
+            }
+            lis[i].onmouseout = function () {
+                this.children[1].style.display = 'none';
+
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

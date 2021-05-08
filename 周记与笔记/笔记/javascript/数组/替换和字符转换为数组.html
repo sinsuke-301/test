@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.替换字符 replace('被替换的字符','替换为的字符');
+        var str = 'abcoefoxyozzopp';
+        while (str.indexOf('o') !== -1) {
+            str = str.replace('o', '*');
+        }
+        console.log(str);
+        //2.字符转换为数组 split('分隔符'); join把数组转换为字符串
+        var str1 = 'red&blue&pink';
+        console.log(str1.split('&'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

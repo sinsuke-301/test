@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 100px auto;
+        }
+
+        div:hover {
+            /* transform: scale(x,y); */
+            transform: scale(2);
+            /* 长宽同时放大两倍 */
+            /* 优点：盒子的放大缩小不会影响其他元素的布局，可设置转换中心点缩放 */
+            transform-origin: left bottom;
+            /* 以左下角缩放 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

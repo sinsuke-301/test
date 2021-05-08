@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.写法：(function() {})() 2.(function(){}());
+        (function (a, b) {
+            console.log(a + b);
+            var num = 10;
+        })(1, 2);//2.第二个小括号可看成调用函数
+        (function sum(a, b) {
+            console.log((a + b));
+            var num = 10;
+        }(2, 3));
+        //3.立即执行函数最大的作用：独立创建一个作用域，里面所有变量都是局部变量，不会有命名冲突的情况
+
+    </script>
+</body>
+
+</html>

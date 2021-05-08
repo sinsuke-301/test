@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.未访问的链接 */
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* 2.已点击过的链接 */
+        a:visited {
+            color: rgb(32, 66, 218);
+        }
+
+        /* 3.选择鼠标经过那个链接 */
+        a:hover {
+            color: skyblue;
+            text-decoration: underline;
+        }
+
+        /* 4.正在按住但没有弹起的链接 */
+        a:active {
+            color: springgreen;
+        }
+
+        /* focus伪类选择器 */
+        input:focus {
+            color: tomato;
+            background-color: wheat;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">测试链接</a>
+    <a href="#">对照链接</a>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+</body>
+
+</html>

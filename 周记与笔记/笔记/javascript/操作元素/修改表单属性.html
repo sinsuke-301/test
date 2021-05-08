@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <input type="text" value="输入内容">
+    <script>
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        btn.onclick = function () {
+            //表单里面的值 文字内容通过value 修改
+            input.value = '被点击了';
+            //点击一次后被禁用
+            btn.disabled = true;
+        }
+    </script>
+</body>
+
+</html>

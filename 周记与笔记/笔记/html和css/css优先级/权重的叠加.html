@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul li 权重 0001+0001=0002   2  */
+        ul li {
+            color: darkseagreen;
+        }
+
+        /* li 权重为0001 1 */
+        li {
+            color: firebrick;
+        }
+
+        /* .nav li 权重 0010+0001=0011 11 权重最大*/
+        .nav li {
+            color: gold;
+        }
+
+        #father {
+            color: lightcoral;
+        }
+
+        p {
+            color: lightslategrey;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>复合选择器会有权重叠加的问题</li>
+        <li>权重虽然会叠加，但是永远不会有进位</li>
+    </ul>
+    <div id="father">
+        <p>继承父元素的权重为0</p>
+    </div>
+</body>
+
+</html>

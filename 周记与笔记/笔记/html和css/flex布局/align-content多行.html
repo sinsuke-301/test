@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 800px;
+            height: 300px;
+            background-color: pink;
+            /* 默认不换行，增加子盒子会压缩盒子挤在一行上 */
+            /* flex-wrap: nowrap; 默认*/
+            flex-wrap: wrap;
+            /* 因为有了换行，此时侧轴控制子元素对齐用align-content */
+            align-content: flex-start;
+            /* 侧轴头部排列 */
+            /* align-content: center; */
+            /* 居中显示 */
+            /* align-content: space-around; */
+            /* 边距平分 */
+            /* align-content: space-between; */
+            /* 紧贴两边（但设置了子盒子外边距所以没贴近 */
+
+        }
+
+        /* 复合属性 flex-flow: column wrap;相当于同时设置了flex-direction和flex-wrap */
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: powderblue;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.脱离标准普通流的控制，浮到指定的位置 */
+        /* 2.浮动的盒子不再保留原先的位置 */
+        .box {
+            height: 300px;
+            background-color: cyan;
+        }
+
+        .box1 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        .box3 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: chocolate;
+        }
+
+        /* 3.浮动元素具有行内块元素特性 */
+        /* 4.任何元素均可转换为浮动元素，转换后均具有行内块特性 */
+        /* 5.如果块级盒子没有设置宽度，默认宽度和父级一样宽，但添加浮动之后，大小根据内容而定 */
+        /* 6.浮动盒子之间无缝隙 */
+        .box2 {
+            width: 300px;
+            height: 300px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">浮动的盒子</div>
+        <div class="box3">浮动的盒子2</div>
+        <div class="box2">标准流的盒子</div>
+    </div>
+
+</body>
+
+</html>

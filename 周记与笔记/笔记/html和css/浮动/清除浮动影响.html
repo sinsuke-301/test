@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 方法二：：after伪元素法，给父元素添加
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+             //IE6、7专有 
+            *zoom: 1;
+        } */
+        /* 方法三：双伪元素，给父元素添加 */
+        clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .box {
+            /* 未定义高度，消除浮动后可自动增大高度 */
+            width: 800px;
+            background-color: deepskyblue;
+        }
+
+        .box .box1 {
+            float: left;
+            width: 100px;
+            height: 200px;
+            margin-right: 100px;
+            background-color: dodgerblue;
+        }
+
+        .box .box2 {
+            float: left;
+            width: 100px;
+            height: 200px;
+            margin-right: 100px;
+            background-color: dodgerblue;
+        }
+
+        .box .box3 {
+            float: left;
+            width: 100px;
+            height: 200px;
+            margin-right: 100px;
+            background-color: dodgerblue;
+        }
+
+        .box .box4 {
+            float: left;
+            width: 100px;
+            height: 200px;
+            margin-right: 100px;
+            background-color: dodgerblue;
+        }
+
+        .box .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <!-- <div class="clear"></div> -->
+        <!-- 方法一：新增盒子，要求必须是块级元素 -->
+    </div>
+
+</body>
+
+</html>
