@@ -59,7 +59,7 @@
 /* 喜欢的音乐模块 */
 .fav_music {
     width: 1200px;
-    height: 800px;
+    height: 1140px;
     background-color: antiquewhite;
     margin: 50px auto;
 }
@@ -80,6 +80,7 @@
     margin: 10px 0 0 0;
 }
 .my_songlist li {
+    position: relative;
     height: 50px;
     margin: 0 0 20px 0;
 }
@@ -115,9 +116,27 @@
     width: 200px;
     background-color: darkgoldenrod;
 }
+ .time {
+    width: 100px;
+    background-color: pink;
+}
 /* 我创建的歌单部分 */
 .songlist {
     width: 1200px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 50px;
+}
+/* 播放 添加 评论 下载 的小图标部分 */
+.icon_box {
+    position: absolute;
+    width: 180px;
+    height: 50px;
+    top: 0;
+    left: 400px;
+    z-index: 99;
+}
+.icon_box span {
+    color: grey;
+    font-size: 26px;
+    margin: 0 5px;
 }

@@ -60,7 +60,7 @@ var fav_music = document.querySelector('.fav_music');
 var song_name = fav_music.querySelectorAll('.song_name');
 var ar_name = fav_music.querySelectorAll('.ar_name');
 var al_name = fav_music.querySelectorAll('.al_name');
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 15; i++) {
     //建立自定义属性
     song_name[i].setAttribute('index', i);
     song_name[i].innerHTML = my_song[i].song.name;
@@ -72,13 +72,16 @@ for (var i = 0; i < 10; i++) {
         location.assign('play.html');
         //获取自定义属性
         var index = this.getAttribute('index');
-        console.log(index);
+        //console.log(index);
         //获取点击歌曲的id并进行存储 存储歌曲名称 歌手
         console.log(my_song[index].song.id);
+        //console.log(song_id_all); //这个bug一旦运行就会出现跨域问题！！
         window.sessionStorage.setItem('song_id', my_song[index].song.id);
         window.sessionStorage.setItem('song_pic', my_song[index].song.al.picUrl);
         window.sessionStorage.setItem('song_name', my_song[index].song.name);
         window.sessionStorage.setItem('singer_name', my_song[index].song.ar[0].name);
+        //存储点击歌曲的位置
+        window.sessionStorage.setItem('index', index);
     })
 }
 // 我创建的歌单部分
@@ -98,10 +101,60 @@ function playlist(address, callback) {
 var songlist = document.querySelector('.songlist');
 var songlist_img = songlist.querySelectorAll('.image_box');
 var songlis_a = songlist.querySelectorAll('.image_a');
-playlist('/user/playlist?uid=' + my_id1, post);
+var songlist_id = [];//存放歌单的id
+playlist('/user/playlist?uid=' + my_id1, post);//获取用户歌单
 for (var i = 0; i < 10; i++) {
     songlist_img[i].src = my_playlist[i].coverImgUrl;
     songlis_a[i].innerHTML = my_playlist[i].name;
+    songlist_id[i] = my_playlist[i].id;
+}
+//获取用户歌单的前十首歌
+var song_name1 = songlist.querySelectorAll('.song_name');
+var ar_name1 = songlist.querySelectorAll('.ar_name');
+var al_name1 = songlist.querySelectorAll('.al_name');
+var songlist_box = songlist.querySelectorAll('.box');
+let my_song1 = [];
+function my_songlist1(address, callback) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            callback();
+            my_song1 = JSON.parse(this.responseText).playlist;
+        }
+    };
+    let url = baseUrl + address;
+    xhttp.open("GET", url, false);
+    xhttp.send('{}');
+}
+console.log(my_song1);
+for (var i = 0; i < songlist_box.length; i++) {
+    songlist_box[i].setAttribute('index', i);
+    songlist_box[i].onclick = function () {
+        var index = this.getAttribute('index');
+        my_songlist1('/playlist/detail?id=' + songlist_id[index], post);
+        console.log(my_song1);
+        for (j = 0; j < 15; j++) {
+            //建立自定义属性
+            song_name1[j].setAttribute('index1', j);
+            song_name1[j].innerHTML = my_song1.tracks[j].name;
+            ar_name1[j].innerHTML = my_song1.tracks[j].ar[0].name;
+            al_name1[j].innerHTML = my_song1.tracks[j].al.name;
+            //测试点击歌曲跳转音乐播放界面
+            song_name1[j].addEventListener('click', function () {
+                //记录浏览历史，可实现后退功能
+                location.assign('play.html');
+                //获取自定义属性
+                var index1 = this.getAttribute('index1');
+                console.log(index1);
+                //获取点击歌曲的id并进行存储 存储歌曲名称 歌手
+                console.log(my_song[index1].song.id);
+                window.sessionStorage.setItem('song_id', my_song1.tracks[index1].id);
+                window.sessionStorage.setItem('song_pic', my_song1.tracks[index1].al.picUrl);
+                window.sessionStorage.setItem('song_name', my_song1.tracks[index1].name);
+                window.sessionStorage.setItem('singer_name', my_song1.tracks[index1].ar[0].name);
+            })
+        }
+    }
 }
 window.addEventListener('load', function () {
     // 我的音乐网页：收藏歌单的播放效果
@@ -130,6 +183,8 @@ window.addEventListener('load', function () {
     //tab栏切换部分
     var tab = document.querySelectorAll('.tab');
     var tab_box = document.querySelectorAll('.tab_box');
+    //先隐藏歌单部分盒子
+    tab_box[1].style.display = 'none';
     for (var i = 0; i < tab.length; i++) {
         tab[i].setAttribute('index', i);
         tab[i].onclick = function () {
@@ -142,6 +197,23 @@ window.addEventListener('load', function () {
                 tab_box[i].style.display = 'none';
             }
             tab_box[index].style.display = 'block';
+        }
+    }
+    // 图标的显示部分
+    var icon_box = document.querySelectorAll('.icon_box');
+    var songlist_li = document.querySelectorAll('.songlist_li');
+    for (var i = 0; i < 25; i++) {
+        songlist_li[i].setAttribute('index', i);
+        icon_box[i].style.display = 'none';
+        songlist_li[i].onmouseover = function () {
+            for (var i = 0; i < 25; i++) {
+                icon_box[i].style.display = 'none';
+            }
+            var index = this.getAttribute('index');
+            icon_box[index].style.display = 'block';
+            songlist_li[index].onmouseleave = function () {
+                icon_box[index].style.display = 'none';
+            }
         }
     }
 })

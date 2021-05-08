@@ -40,7 +40,7 @@ window.addEventListener('load', function () {
     }
     //调用函数发起请求
     search('/search/hot', post)
-    console.log(res);
+    //console.log(res);
     //获取html的div元素
     let ul = document.getElementById('search_menu')
     var lis = ul.querySelectorAll('li');

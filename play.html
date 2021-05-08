@@ -8,31 +8,22 @@
     <link rel="stylesheet" href="./css/play.css">
     <link rel="stylesheet" href="./css/base.css">
     <style>
-        #progressBar {
-            width: 600px;
-            height: 30px;
-            background: #e9e9e9;
-            margin-top: 10px;
-            position: relative;
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font/iconfont.eot');
+            src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+                url('./font/iconfont.woff2') format('woff2'),
+                url('./font/iconfont.woff') format('woff'),
+                url('./font/iconfont.ttf') format('truetype'),
+                url('./font/iconfont.svg#iconfont') format('svg');
         }
 
-        #playProgressBar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: #20bfd8;
-            height: 30px;
-            width: 0px;
-        }
-
-        #ptxt {
-            width: 100%;
-            height: 30px;
-            text-align: center;
+        .iconfont {
+            font-family: "iconfont" !important;
             font-size: 16px;
-            line-height: 30px;
-            z-index: 10;
-            position: absolute;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
     </style>
 </head>
@@ -49,13 +40,18 @@
         </div>
     </header>
     <!-- 歌词歌曲部分 -->
-    <section>
+    <section class="album_box">
         <!-- 歌曲光碟 -->
         <div class="album">
             <img src="" alt="" id="album_img">
         </div>
     </section>
-
+    <!-- 歌词部分 -->
+    <section class="lyric_box">
+        <div class="lyric_run">
+            <ul class="lyric"></ul>
+        </div>
+    </section>
     <!-- 下端播放栏 -->
     <!-- 音乐播放 -->
     <section class="music_play">
@@ -69,10 +65,10 @@
         <!-- 播放图标 位于头部-->
         <div class="broadcast">
             <!-- 上一首图标 -->
-            <span class="rewind" id="rewind">上一首</span>
-            <span class="play" id="play">▶</span>
+            <span class="rewind iconfont" id="rewind">&#xe8a8;</span>
+            <span class="play iconfont" id="play">&#xe76a;</span>
             <!-- 下一首图标 -->
-            <span class="forward" id="forward">下一首</span>
+            <span class="forward iconfont" id="forward">&#xe8a7;</span>
         </div>
         <!-- 进度条 -->
         <div class="jindu_bg" id="jindu_bg">
@@ -81,7 +77,7 @@
         </div>
         <!-- 音量图标 -->
         <div id="voice_box">
-            <span id="jy">静音</span>
+            <span id="jy" class="iconfont">&#xe80c;</span>
             <div id="voice">
                 <span id="voice_span"></span>
             </div>
@@ -93,6 +89,173 @@
             <span class="xian">/</span>
             <span class="totalTime" id="totalTime">00:00</span>
         </div>
+    </section>
+    <!-- 歌曲评论模块 和歌曲列表合并（tab栏切换）-->
+    <section class="review_songlist">
+        <div class="head">
+            <span class="head1 selected">热门评论</span>
+            <span class="head1">歌曲列表</span>
+        </div>
+        <div class="review_songlist_box">
+            <div class="review_box music_tab">
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+            </div>
+            <!-- 歌曲列表 -->
+            <div class="musiclist music_tab">
+                <ul>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </section>
     <script src="./js/play.js"></script>
     <script src="./js/server.js"></script>
