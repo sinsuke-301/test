@@ -24,6 +24,7 @@ nav {
      margin: 10px -20px 0 0;
      width: 200px;
      height: 70px;
+     cursor: pointer;
  }
  .nav_top ul {
      float: left;
@@ -108,8 +109,8 @@ nav {
  }
  .search input {
      float: right;
-     /* width: 180px; */
-     width: 0;
+     width: 180px;
+     /* width: 0; */
      height: 36px;
      padding: 0 0 0 10px;
      overflow: hidden;
@@ -117,7 +118,7 @@ nav {
      border-right-color: transparent;
      transition: all 0.4s;
  }
- .search span {
+ .search .find {
      float: right;
      text-align: center;
      line-height: 34px;
@@ -126,6 +127,10 @@ nav {
      margin: 0 18px 0 0;
      border: 1px solid #c9c9c9;
      border-left-color: transparent;
+     cursor: pointer;
+ }
+ .search .find:hover {
+     color: skyblue;
  }
  .nav_right {
      position: relative;
@@ -197,12 +202,28 @@ nav {
      font-size: 14px;
      /* padding: 5px 10px; */
      background-color: #ffffff;
+     cursor: pointer;
+ }
+ #search_menu .history:hover {
+     background-color: #ffffff;
+     color: black;
  }
  #search_menu li:hover {
-     background-color: #94ebff;
+     background-color: #00a1e5;
+     color: white;
+     text-decoration: underline;
  }
  #search_menu li:nth-child(1) {
      color: black;
+ }
+ #search_menu li:nth-child(1):hover {
+     color: white;
+ }
+ #search_menu .del_btn {
+     float: right;
+ }
+ #search_menu .del_btn:hover {
+     color: skyblue;
  }
  /* 小三角部分 */
  .nav_right a::after {

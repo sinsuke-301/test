@@ -21,22 +21,36 @@ person_name.innerHTML = login_name.innerHTML;
 function post() {
     //alert('成功发送了请求');
 }
-let xhr = [];//获取用户信息
-function person(address, callback) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            callback();
-            xhr = JSON.parse(this.responseText).profile;
+//let xhr = [];
+function person(u, my_id1) {
+    $ajax({
+        url: baseUrl + u,
+        data: {
+            id: my_id1
+        },
+        success: function (response) {
+            var xhr = JSON.parse(response).profile;//获取用户信息
+            var fans = document.querySelector('.fans');
+            fans.innerHTML = '关注：' + xhr.follows + ' | 粉丝：' + xhr.followeds;
         }
-    };
-    let url = baseUrl + address;
-    xhttp.open("GET", url, false);
-    xhttp.send('{}');
+    })
 }
-person('user/detail?uid=' + my_id1, post);
-var fans = document.querySelector('.fans');
-fans.innerHTML = '关注：' + xhr.follows + ' | 粉丝：' + xhr.followeds;
+person('user/detail?uid=', my_id1);
+// function person(address, callback) {
+//     var xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState == 4 && this.status == 200) {
+//             callback();
+//             xhr = JSON.parse(this.responseText).profile;
+//         }
+//     };
+//     let url = baseUrl + address;
+//     xhttp.open("GET", url, false);
+//     xhttp.send('{}');
+// }
+// person('user/detail?uid=' + my_id1, post);
+// var fans = document.querySelector('.fans');
+// fans.innerHTML = '关注：' + xhr.follows + ' | 粉丝：' + xhr.followeds;
 //console.log(xhr.follows);
 //console.log(xhr.followeds);
 

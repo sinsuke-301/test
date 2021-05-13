@@ -23,6 +23,7 @@ window.addEventListener('load', function () {
             }
         }
     }
+
     //新歌首发的播放效果
     var new_image = document.querySelectorAll('.new_image');
     var newes = document.querySelectorAll('.newes');

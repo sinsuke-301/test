@@ -20,14 +20,12 @@ image.style.display = 'none';
 var img_url = [];//获取头像的数组
 var nickname = [];//获取用户名称的数组
 var my_id = [];//获取用户的id号
+var cookie = [];//获取登录接口的cookie
 login_btn2.onclick = function () {
     let phonewords = phone.value;
     let secretwords = secret_num.value;
     let address = 'login/cellphone?phone=' + phonewords + '&password=' + secretwords;
     login(address, post);
-    //尝试获取手机号码和密码 暂时可以不用
-    // window.sessionStorage.setItem('phonewords', phonewords);
-    // window.sessionStorage.setItem('secretwords', secretwords);
 }
 //登录界面的跳转
 image.addEventListener('click', function () {
@@ -43,20 +41,19 @@ function login(address, callback) {
                 console.log(JSON.parse(http.responseText));
                 img_url = JSON.parse(http.responseText).profile.avatarUrl;
                 nickname = JSON.parse(http.responseText).profile.nickname;
-                console.log(img_url);
-                console.log(nickname);
+                cookie = JSON.parse(http.responseText).cookie;
                 image.src = img_url;
                 login_name.innerHTML = nickname;
                 my_id = JSON.parse(http.responseText).account.id;
                 console.log(my_id);
 
                 //存储用户头像 用户名
-                //window.localStorage.setItem('img_url', img_url);
                 window.sessionStorage.setItem('img_url', img_url);
-                //window.localStorage.setItem('nickname', nickname);
                 window.sessionStorage.setItem('nickname', nickname);
                 window.sessionStorage.setItem('my_id', my_id);
-
+                //存储登录接口cookie 评论用
+                window.sessionStorage.setItem('user_cookie', cookie);
+                console.log(cookie);
                 login_box.style.display = 'none';
                 login_btn1.style.display = 'none';
                 back_new.style.display = 'block';

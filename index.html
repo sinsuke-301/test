@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/common.css">
     <script src="./js/animate.js"></script>
     <script src="./js/base.js"></script>
+    <script src="./js/ajax函数.js"></script>
     <style>
         @font-face {
             font-family: 'iconfont';
@@ -48,7 +49,7 @@
         <div class="nav_box">
             <!-- 上半部分 -->
             <div class="nav_top">
-                <img src="./images/logo1.png" alt="">
+                <img src="./images/logo1.png" alt="" class="logo">
                 <ul>
                     <li>音乐馆</li>
                     <li><a href="#">我的音乐</a></li>
@@ -66,7 +67,7 @@
                     <span href="#" id="back_new">退出</span>
                 </div>
                 <div class="search">
-                    <span class="iconfont">&#xe617;</span>
+                    <span class="iconfont find">&#xe617;</span>
                     <input type="text" placeholder="搜索音乐、MV、歌单、用户">
                     <ul id="search_menu">
                         <li></li>
@@ -74,6 +75,7 @@
                         <li></li>
                         <li></li>
                         <li></li>
+                        <li class="history">历史记录<span class="iconfont">&#xe614;</span></li>
                     </ul>
                 </div>
                 <script src="./js/search.js"></script>
@@ -141,74 +143,35 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="box_all">
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#" class="image_a"></a>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#" class="image_a"></a>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#" class="image_a"></a>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#" class="image_a"></a>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                             </div>
                         </li>
@@ -219,74 +182,35 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="box_all">
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#" class="image_a"></a>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#" class="image_a"></a>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#" class="image_a"></a>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#" class="image_a"></a>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                             </div>
                         </li>
@@ -297,35 +221,35 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                             </div>
                         </li>
@@ -336,35 +260,113 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                                 <div class="box">
                                     <div class="image">
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#" class="image_a"></a>
+                                    <a href="javascript:;" class="image_a"></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box_all">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;" class="image_a"></a>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;" class="image_a"></a>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;" class="image_a"></a>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;" class="image_a"></a>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;" class="image_a"></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box_all">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;" class="image_a"></a>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;" class="image_a"></a>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;" class="image_a"></a>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;" class="image_a"></a>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;" class="image_a"></a>
                                 </div>
                             </div>
                         </li>
@@ -392,7 +394,7 @@
                         <li><a href="#">韩国</a></li>
                         <li><a href="#">日本</a></li>
                     </ul>
-                    <a href="#" class="start"><span class="iconfont">&#xe688;</span>&nbsp;播放全部</a>
+                    <a href="javascript:;" class="start"><span class="iconfont">&#xe688;</span>&nbsp;播放全部</a>
                 </div>
                 <div class="new_box">
                     <ul class="lunbo" style="width: 800%;">
@@ -403,7 +405,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -412,7 +414,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -421,7 +423,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -430,7 +432,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -439,7 +441,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -448,7 +450,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -457,7 +459,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -466,7 +468,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -475,92 +477,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="new1">
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -573,7 +490,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -582,7 +499,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -591,7 +508,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -600,7 +517,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -609,7 +526,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -618,7 +535,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -627,7 +544,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -636,7 +553,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -645,92 +562,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul class="new1">
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
-                                    <p class="new_p"></p>
-                                    <span class="new_span"></span>
-                                </li>
-                                <li>
-                                    <div class="new_image">
-                                        <img src="" alt="" class="newes">
-                                        <img src="./images/play.png" alt="" class="play">
-                                    </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -743,7 +575,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -752,7 +584,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -761,7 +593,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -770,7 +602,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -779,7 +611,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -788,7 +620,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -797,7 +629,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -806,7 +638,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -815,7 +647,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -828,7 +660,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -837,7 +669,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -846,7 +678,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -855,7 +687,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -864,7 +696,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -873,7 +705,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -882,7 +714,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -891,7 +723,7 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -900,7 +732,177 @@
                                         <img src="" alt="" class="newes">
                                         <img src="./images/play.png" alt="" class="play">
                                     </div>
-                                    <a href="#" class="new_a"></a>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="new1">
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="new1">
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
+                                    <p class="new_p"></p>
+                                    <span class="new_span"></span>
+                                </li>
+                                <li>
+                                    <div class="new_image">
+                                        <img src="" alt="" class="newes">
+                                        <img src="./images/play.png" alt="" class="play">
+                                    </div>
+                                    <a href="javascript:;" class="new_a"></a>
                                     <p class="new_p"></p>
                                     <span class="new_span"></span>
                                 </li>
@@ -937,7 +939,7 @@
                             <img src="" alt="" class="image_box radio_img">
                             <img src="./images/play.png" alt="" class="broadcast">
                         </div>
-                        <a href="#" class="radio_a"></a>
+                        <a href="javascript:;" class="radio_a"></a>
                         <p class="radio_p"></p>
                     </div>
                     <div class="box">
@@ -945,7 +947,7 @@
                             <img src="" alt="" class="image_box radio_img">
                             <img src="./images/play.png" alt="" class="broadcast">
                         </div>
-                        <a href="#" class="radio_a"></a>
+                        <a href="javascript:;" class="radio_a"></a>
                         <p class="radio_p"></p>
                     </div>
                     <div class="box">
@@ -953,7 +955,7 @@
                             <img src="" alt="" class="image_box radio_img">
                             <img src="./images/play.png" alt="" class="broadcast">
                         </div>
-                        <a href="#" class="radio_a"></a>
+                        <a href="javascript:;" class="radio_a"></a>
                         <p class="radio_p"></p>
                     </div>
                     <div class="box">
@@ -961,7 +963,7 @@
                             <img src="" alt="" class="image_box radio_img">
                             <img src="./images/play.png" alt="" class="broadcast">
                         </div>
-                        <a href="#" class="radio_a"></a>
+                        <a href="javascript:;" class="radio_a"></a>
                         <p class="radio_p"></p>
                     </div>
                     <div class="box">
@@ -969,7 +971,7 @@
                             <img src="" alt="" class="image_box radio_img">
                             <img src="./images/play.png" alt="" class="broadcast">
                         </div>
-                        <a href="#" class="radio_a"></a>
+                        <a href="javascript:;" class="radio_a"></a>
                         <p class="radio_p"></p>
                     </div>
                     <div class="box">
@@ -977,7 +979,7 @@
                             <img src="" alt="" class="image_box radio_img">
                             <img src="./images/play.png" alt="" class="broadcast">
                         </div>
-                        <a href="#" class="radio_a"></a>
+                        <a href="javascript:;" class="radio_a"></a>
                         <p class="radio_p"></p>
                     </div>
                     <div class="box">
@@ -985,7 +987,7 @@
                             <img src="" alt="" class="image_box radio_img">
                             <img src="./images/play.png" alt="" class="broadcast">
                         </div>
-                        <a href="#" class="radio_a"></a>
+                        <a href="javascript:;" class="radio_a"></a>
                         <p class="radio_p"></p>
                     </div>
                     <div class="box">
@@ -993,7 +995,7 @@
                             <img src="" alt="" class="image_box radio_img">
                             <img src="./images/play.png" alt="" class="broadcast">
                         </div>
-                        <a href="#" class="radio_a"></a>
+                        <a href="javascript:;" class="radio_a"></a>
                         <p class="radio_p"></p>
                     </div>
                     <div class="box">
@@ -1001,7 +1003,7 @@
                             <img src="" alt="" class="image_box radio_img">
                             <img src="./images/play.png" alt="" class="broadcast">
                         </div>
-                        <a href="#" class="radio_a"></a>
+                        <a href="javascript:;" class="radio_a"></a>
                         <p class="radio_p"></p>
                     </div>
                     <div class="box">
@@ -1009,7 +1011,7 @@
                             <img src="" alt="" class="image_box radio_img">
                             <img src="./images/play.png" alt="" class="broadcast">
                         </div>
-                        <a href="#" class="radio_a"></a>
+                        <a href="javascript:;" class="radio_a"></a>
                         <p class="radio_p"></p>
                     </div>
                 </div>
@@ -1019,7 +1021,7 @@
         <div class="rank_all">
             <div class="head">
                 <h1>排&nbsp;行&nbsp;榜</h1>
-                <a href="#" class="more">更多<span class="iconfont">&#xe68d;</span></a>
+                <a href="javascript:;" class="more">更多<span class="iconfont">&#xe68d;</span></a>
             </div>
             <div class="rank_box">
                 <ul>
@@ -1032,14 +1034,14 @@
                             <img src="./images/play.png" alt="" class="rank_play">
                         </div>
                         <div class="rank_box_bottom">
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
                         </div>
                     </li>
@@ -1052,14 +1054,14 @@
                             <img src="./images/play.png" alt="" class="rank_play">
                         </div>
                         <div class="rank_box_bottom">
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
                         </div>
                     </li>
@@ -1072,14 +1074,14 @@
                             <img src="./images/play.png" alt="" class="rank_play">
                         </div>
                         <div class="rank_box_bottom">
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
                         </div>
                     </li>
@@ -1092,14 +1094,14 @@
                             <img src="./images/play.png" alt="" class="rank_play">
                         </div>
                         <div class="rank_box_bottom">
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
-                            <p><a href="#" class="rank_song"></a>
-                                <a href="#" class="rank_artist"></a>
+                            <p><a href="javascript:;" class="rank_song"></a>
+                                <a href="javascript:;" class="rank_artist"></a>
                             </p>
                         </div>
                     </li>
@@ -1129,7 +1131,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1138,7 +1140,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1147,7 +1149,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1156,7 +1158,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1165,7 +1167,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1174,7 +1176,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1183,7 +1185,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1192,7 +1194,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1201,7 +1203,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1210,101 +1212,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
-                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
-                                    <p class="mv_play"></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="box_all">
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#"></a>
-                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
-                                    <p class="mv_play"></p>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#"></a>
-                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
-                                    <p class="mv_play"></p>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#"></a>
-                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
-                                    <p class="mv_play"></p>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#"></a>
-                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
-                                    <p class="mv_play"></p>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#"></a>
-                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
-                                    <p class="mv_play"></p>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#"></a>
-                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
-                                    <p class="mv_play"></p>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#"></a>
-                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
-                                    <p class="mv_play"></p>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#"></a>
-                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
-                                    <p class="mv_play"></p>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#"></a>
-                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
-                                    <p class="mv_play"></p>
-                                </div>
-                                <div class="box">
-                                    <div class="image">
-                                        <img src="" alt="" class="image_box">
-                                        <img src="./images/play.png" alt="" class="broadcast">
-                                    </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1317,7 +1225,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1326,7 +1234,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1335,7 +1243,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1344,7 +1252,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1353,7 +1261,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1362,7 +1270,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1371,7 +1279,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1380,7 +1288,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1389,7 +1297,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1398,7 +1306,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1411,7 +1319,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1420,7 +1328,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1429,7 +1337,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1438,7 +1346,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1447,7 +1355,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1456,7 +1364,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1465,7 +1373,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1474,7 +1382,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1483,7 +1391,7 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>
@@ -1492,7 +1400,101 @@
                                         <img src="" alt="" class="image_box">
                                         <img src="./images/play.png" alt="" class="broadcast">
                                     </div>
-                                    <a href="#"></a>
+                                    <a href="javascript:;"></a>
+                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
+                                    <p class="mv_play"></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box_all">
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;"></a>
+                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
+                                    <p class="mv_play"></p>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;"></a>
+                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
+                                    <p class="mv_play"></p>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;"></a>
+                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
+                                    <p class="mv_play"></p>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;"></a>
+                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
+                                    <p class="mv_play"></p>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;"></a>
+                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
+                                    <p class="mv_play"></p>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;"></a>
+                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
+                                    <p class="mv_play"></p>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;"></a>
+                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
+                                    <p class="mv_play"></p>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;"></a>
+                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
+                                    <p class="mv_play"></p>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;"></a>
+                                    <p style="margin: 0 0 8px 0;" class="mv_name"></p>
+                                    <p class="mv_play"></p>
+                                </div>
+                                <div class="box">
+                                    <div class="image">
+                                        <img src="" alt="" class="image_box">
+                                        <img src="./images/play.png" alt="" class="broadcast">
+                                    </div>
+                                    <a href="javascript:;"></a>
                                     <p style="margin: 0 0 8px 0;" class="mv_name"></p>
                                     <p class="mv_play"></p>
                                 </div>

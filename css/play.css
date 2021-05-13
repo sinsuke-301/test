@@ -71,6 +71,7 @@ header #user_name {
     top: 40px;
     left: 0;
     transition: top .2s linear;
+    white-space: pre;
 }
 .lyric li {
     list-style: none;

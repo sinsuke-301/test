@@ -1,6 +1,7 @@
-/* body {
-    height: 5000px;
-} */
+body {
+    /* height: 5000px; */
+    background-color: #f5f5f5;
+}
 /* 个人主页部分 */
 .Mymusic {
     position: relative;
@@ -60,7 +61,7 @@
 .fav_music {
     width: 1200px;
     height: 1140px;
-    background-color: antiquewhite;
+    background-color: #ffffff;
     margin: 50px auto;
 }
 .fav_music .start {
@@ -106,25 +107,29 @@
  .song_name{
     width: 530px;
     margin: 0 0 0 -5px;
-    background-color: beige;
+    background-color: #f5f5f5;
 }
  .ar_name {
     width: 285px;
-    background-color: cadetblue;
+    background-color: #f5f5f5;
 }
  .al_name {
     width: 200px;
-    background-color: darkgoldenrod;
+    background-color: #f5f5f5;
 }
  .time {
     width: 100px;
-    background-color: pink;
+    background-color: #f5f5f5;
 }
 /* 我创建的歌单部分 */
 .songlist {
     width: 1200px;
     margin: 0 auto;
     margin-top: 50px;
+}
+.my_songlist {
+    background-color: #ffffff;
+    padding: 15px 0;
 }
 /* 播放 添加 评论 下载 的小图标部分 */
 .icon_box {

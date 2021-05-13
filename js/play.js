@@ -199,14 +199,28 @@ mym.addEventListener("ended", function () {
 //     music_ar_name[i].innerHTML = my_song_all[i].song.ar[0].name;
 // }
 //歌词滚动部分
-var str_box = [];//获取歌词
+var str_box = [];//获取原歌词
+var str_box1 = [];//获取翻译后的歌词
 var str = [];
+var str1 = [];
 function lyric_attain(address, callback) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             callback();
-            str_box = JSON.parse(this.responseText).tlyric;
+            str_box = JSON.parse(this.responseText).lrc;//获取的是原歌词
+        }
+    };
+    let url = 'https://autumnfish.cn/' + address;
+    xhttp.open("GET", url, false);
+    xhttp.send('{}');
+}
+function lyric_attain1(address, callback) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            callback();
+            str_box1 = JSON.parse(this.responseText).tlyric;//获取的是翻译后的歌词
         }
     };
     let url = 'https://autumnfish.cn/' + address;
@@ -214,13 +228,21 @@ function lyric_attain(address, callback) {
     xhttp.send('{}');
 }
 lyric_attain('lyric?id=' + song_id, post);
+lyric_attain1('lyric?id=' + song_id, post);
 str = str_box.lyric;
-console.log(str);
+str1 = str_box1.lyric;
+//console.log(str);
 var lrc = [];
 var timer = []
 var arr = str.split('\n')//以回车作为分隔符 分割歌词
 var reg = /\[(\d{2}:\d{2})\.\d{2,3}\](.+)/
+var change_lrc = str1.split(/\s*\n*\[.*?\]\s*/).filter(v => !!v)
+//console.log(change_lrc)//提取翻译后的歌词
 //正则表达式匹配字符
+//嵌入翻译后的歌词
+for (var i = 0; i < arr.length; i++) {
+    arr[i] = arr[i] + "\n" + change_lrc[i];
+}
 arr.forEach(function (a) {
     //forEach for循环的简化写法
     if (reg.exec(a) != null) {
@@ -228,11 +250,14 @@ arr.forEach(function (a) {
         lrc.push(reg.exec(a)[2])//推入对应歌词的项
     }
 })
+//console.log(arr);
 var ul = document.querySelector('.lyric')
 var frg = document.createDocumentFragment()
 lrc.forEach(function (a) {
     var li = document.createElement('li')
+    //while (a.indexOf("\\n") >= 0) { a = a.replace("\\n", " \n "); }
     li.innerText = a
+    console.log(a);
     frg.appendChild(li)
     //forEach for循环的简化写法
 })
