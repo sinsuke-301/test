@@ -1,0 +1,16 @@
+2021/05/15 17:10:50 [error] 8384#6436: *1 CreateFile() "C:\Users\82068\Desktop\text\nginx-1.20.0/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/05/15 17:33:51 [notice] 13000#3100: signal process started
+2021/05/15 17:34:55 [notice] 4036#7872: signal process started
+2021/05/15 17:34:55 [error] 4036#7872: CreateFile() "C:\Users\82068\Desktop\text\nginx-1.20.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2021/05/15 17:36:26 [notice] 14956#9784: signal process started
+2021/05/15 17:36:26 [error] 14956#9784: CreateFile() "C:\Users\82068\Desktop\text\nginx-1.20.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2021/05/15 17:54:15 [emerg] 564#5268: CreateFile() "C:\Users\82068\Desktop\text\¶þÂÖ¿¼ºË\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/15 17:54:38 [emerg] 16540#6316: CreateFile() "C:\Users\82068\Desktop\text\¶þÂÖ¿¼ºË\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/15 17:55:55 [error] 16284#7872: *1 "C:/äºŒè½®è€ƒæ ¸/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8080"
+2021/05/15 17:57:19 [error] 7036#9280: *1 "C:/cat/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8080"
+2021/05/15 21:12:36 [emerg] 16448#15612: CreateFile() "C:\Users\82068\Desktop\Ç°¶Ë\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/15 21:12:59 [emerg] 14468#8916: CreateFile() "C:\Users\82068\Desktop\Ç°¶Ë\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/15 21:14:20 [emerg] 17352#16400: CreateFile() "C:\Users\82068\Desktop\Ç°¶Ë\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/15 21:18:54 [emerg] 18224#12896: CreateFile() "C:\Users\82068\Desktop\Ç°¶Ë\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/15 21:19:10 [emerg] 8872#5768: CreateFile() "C:\Users\82068\Desktop\Ç°¶Ë\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/15 21:19:21 [emerg] 16752#17292: CreateFile() "C:\Users\82068\Desktop\Ç°¶Ë\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
