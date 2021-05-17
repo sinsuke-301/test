@@ -1,0 +1,68 @@
+body {
+    background-color: #f7f7f7;
+}
+section {
+    width: 1200px;
+    height: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+.singer {
+    position: relative;
+    width: 900px;
+    height: 1000px;
+    background-color: #ffffff;
+}
+.singer_name {
+    float: left;
+    margin: 50px -35px 30px 0;
+}
+.singer .back_pic {
+    float: left;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin: 20px ;
+}
+.ar_tab {
+    position: absolute;
+    top: 150px;
+    left: 230px;
+    /* float: left; */
+    /* margin: 150px 0 0 -50px; */
+}
+.ar_tab span {
+    width: 100px;
+    height: 60px;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    margin: 0 0 0 10px;
+    transition: all 0.2s;
+    border: 1px solid grey;
+}
+.ar_tab span:hover {
+    background-color: #408db1;
+    color: white;
+    cursor: pointer;
+}
+.introduct {
+    float: right;
+    width: 300px;
+    /* height: 1000px; */
+    background-color: #ffffff;
+    border: 1px solid grey;
+    margin: -1025px 0 0 0;
+    padding: 0 10px;
+}
+.introduct h4 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+.relevantlist {
+    position: relative;
+}
+.relevantlist .rel_arname:hover {
+    color: skyblue;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,3 +1,12 @@
+//判断是否登录
+var user_img = document.getElementById('user_img');
+if (sessionStorage.getItem('img_url')) {
+
+}
+else {
+    user_img.style.display = 'none';
+}
+
 // 获取存储的数据
 var user_img = document.getElementById('user_img');
 var user_name = document.getElementById('user_name');
@@ -5,14 +14,14 @@ user_img.src = sessionStorage.getItem('img_url');
 user_name.innerHTML = sessionStorage.getItem('nickname');
 //获取歌曲的封面
 var album_img = document.getElementById('album_img');
-album_img.src = sessionStorage.getItem('song_pic');
+//album_img.src = sessionStorage.getItem('song_pic');
 var music_img = document.querySelector('.music_img');
 music_img.src = album_img.src;
 //获取歌曲名 歌手名
 let song_name = document.getElementById('song_name');
 let singer_name = document.getElementById('singer_name');
-song_name.innerHTML = sessionStorage.getItem('song_name');
-singer_name.innerHTML = sessionStorage.getItem('singer_name');
+//song_name.innerHTML = sessionStorage.getItem('song_name');
+//singer_name.innerHTML = sessionStorage.getItem('singer_name');
 
 //下端播放栏部分
 let mym = document.getElementById('mym');
@@ -28,20 +37,144 @@ let current = document.getElementById('current');
 let startX; // 鼠标开始按下的位置
 mym.volume = 0.5;//初始音量为0.5
 
-let count = 0;//记录当前歌曲
-count = window.sessionStorage.getItem('index');
-//获取歌曲url,歌词部分
-function post() {
-    //alert(1);
-}
+let count = 0;//记录当前歌曲的位置
+count = sessionStorage.getItem('index');
+//获取歌单id号
+let rec_id = [];
+rec_id = sessionStorage.getItem('rec_id');
 let music_baseurl = 'https://music.163.com/song/media/outer/url?id=';
-//let musicArr = [];//存放歌曲地址的数组
+var id_box = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];//存放十首歌曲的id
+var musicArr = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];//存放url地址
+//获取歌曲列表
+var music_name = document.querySelectorAll('.music_name');
+var music_ar_name = document.querySelectorAll('.music_ar_name');
+var musictime = document.querySelectorAll('.musictime');
+function musiclist(u, rec_id) {
+    $ajax({
+        url: 'https://autumnfish.cn/' + u,
+        data: {
+            id: rec_id
+        },
+        success: function (response) {
+            var music_str = JSON.parse(response).playlist;
+            for (var i = 0; i < music_name.length; i++) {
+                music_name[i].setAttribute('num', i);
+                music_name[i].innerHTML = music_str.tracks[i].name;
+                music_ar_name[i].innerHTML = music_str.tracks[i].ar[0].name;
+                id_box[i] = music_str.tracks[i].id;
+                musicArr[i] = music_baseurl + music_str.tracks[i].id + '.mp3';
+                music_name[i].onclick = function () {
+                    var num = this.getAttribute('num');
+                    while (ul.hasChildNodes()) {
+                        ul.removeChild(ul.firstChild);
+                    }
+                    count = num;
+                    mym.src = musicArr[num];
+                    song_detail('song/detail', id_box[num]);
+                    min = '00';
+                    secs = '00';
+                    lyric_attain('lyric', id_box[num]);
+                    review('/comment/music?id=', id_box[num])
+
+                }
+            }
+        }
+    })
+}
+musiclist('playlist/detail', rec_id);
+console.log(id_box);
+console.log(musicArr);
 //获取所点击的歌曲的id(获取音乐url 歌词)
-let song_id = [];//存放该列表歌曲全部id
+let song_id = [];
 song_id = sessionStorage.getItem('song_id');
 console.log(song_id);
 mym.src = music_baseurl + song_id + '.mp3';
 //只需要获取歌曲id即可获得歌曲url
+//封面 歌手 歌名
+function song_detail(u, song_id) {
+    $ajax({
+        url: 'https://autumnfish.cn/' + u,
+        data: {
+            ids: song_id
+        },
+        success: function (response) {
+            var song_str = JSON.parse(response).songs[0];
+            console.log(song_str);
+            album_img.src = song_str.al.picUrl;
+            song_name.innerHTML = song_str.name;
+            singer_name.innerHTML = song_str.ar[0].name;
+            music_img.src = album_img.src;
+        }
+    })
+}
+song_detail('song/detail', song_id);
+//获取歌曲url,歌词部分
+function post() {
+    //alert(1);
+}
+//歌词滚动部分
+//var str_box = [];//获取原歌词
+//var str_box1 = [];//获取翻译后的歌词
+var str = [];
+var timer = []
+var ul = document.querySelector('.lyric')
+var frg = document.createDocumentFragment()
+var mins;
+var secs;
+//var ad = document.querySelector('audio')
+var currtime;//定义全局变量 进度条变化 歌曲正常播放 歌词随之变化滚动
+function lyric_attain(u, song_id) {
+    $ajax({
+        url: 'https://autumnfish.cn/' + u,
+        data: {
+            id: song_id
+        },
+        success: function (response) {
+            var str_box = JSON.parse(response).lrc;
+            str = str_box.lyric;
+            var lrc = [];
+            var arr = str.split('\n')//以回车作为分隔符 分割歌词
+            var reg = /\[(\d{2}:\d{2})\.\d{2,3}\](.+)/
+            //var change_lrc = str1.split(/\s*\n*\[.*?\]\s*/).filter(v => !!v)
+            arr.forEach(function (a) {
+                //forEach for循环的简化写法
+                if (reg.exec(a) != null) {
+                    timer.push(reg.exec(a)[1])//推入歌词对应时间的项
+                    lrc.push(reg.exec(a)[2])//推入对应歌词的项
+                }
+            })
+            //console.log(arr);
+            lrc.forEach(function (a) {
+                var li = document.createElement('li')
+                //while (a.indexOf("\\n") >= 0) { a = a.replace("\\n", " \n "); }
+                li.innerText = a
+                console.log(a);
+                frg.appendChild(li)
+                //forEach for循环的简化写法
+            })
+            ul.appendChild(frg)
+
+        }
+    })
+}
+lyric_attain('lyric', song_id);
+mym.ontimeupdate = function () {
+    currtime = parseInt(this.currentTime)//返回十进制整数
+    mins = parseInt(currtime / 60)
+    secs = currtime % 60
+    if (mins < 10) mins = '0' + mins
+    if (secs < 10) secs = '0' + secs
+    var timstr = mins + ':' + secs
+    timer.forEach(function (a, i) {
+        if (a == timstr) {
+            ul.style.top = 40 - i * 33.5 + 'px'
+            for (var j = 0; j < ul.children.length; j++) {
+                ul.children[j].className = ''
+            }
+            ul.children[i].className = 'active'
+        }
+    })
+}
 //设置点击事件实现暂停、播放
 play.addEventListener('click', function () {
     if (mym.paused) {
@@ -57,7 +190,6 @@ jy.addEventListener("click", function () {
     if (mym.muted) {
         mym.muted = false;
         this.innerHTML = '&#xe80c;';
-        //mym.play();
     }
     else {
         mym.muted = true;
@@ -139,22 +271,38 @@ jindu_bg.addEventListener("mouseleave", function () {
 });
 // 歌曲下一首切换
 forward.addEventListener("click", function () {
+    while (ul.hasChildNodes()) {
+        ul.removeChild(ul.firstChild);
+    }
     count++;
     if (count > musicArr.length - 1) {
         count = 0;
     }
     mym.src = musicArr[count];
-    mname.innerHTML = musicArr[count];
+    song_detail('/song/detail', id_box[count]);
+    min = '0' + '0';
+    secs = '0' + '0';
+    lyric_attain('lyric', id_box[count]);
+    review('/comment/music?id=', id_box[count])
+
+
 });
 
 // 歌曲上一首切换
 rewind.addEventListener('click', function () {
+    while (ul.hasChildNodes()) {
+        ul.removeChild(ul.firstChild);
+    }
     count--;
     if (count === -1) {
         count = musicArr.length - 1;
     }
     mym.src = musicArr[count];
-    mname.innerHTML = musicArr[count];
+    song_detail('/song/detail', id_box[count]);
+    min = '0' + '0';
+    secs = '0' + '0';
+    lyric_attain('lyric', id_box[count]);
+    review('/comment/music?id=', id_box[count])
 });
 // 切换后播放
 mym.addEventListener("loadstart", function () {
@@ -167,120 +315,9 @@ mym.addEventListener("ended", function () {
         count = 0;
     }
     mym.src = musicArr[count];
-    mname.innerHTML = musicArr[count];
 });
-//歌曲列表部分
-// 最近在听 / 歌单导入歌曲列表
 
-//获取最近在听歌曲信息 重新发送请求获取
-// var my_song_all = [];
-// var musiclist = document.querySelector('.musiclist');
-// var music_name = musiclist.querySelectorAll('.music_name');
-// var music_ar_name = musiclist.querySelectorAll('.music_ar_name');
-// var musictime = musiclist.querySelectorAll('.musictime');
-// var my_id1 = [];//获取用户id
-// my_id1 = sessionStorage.getItem('my_id');
-// function my_songlist(address, callback) {
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState == 4 && this.status == 200) {
-//             callback();
-//             my_song_all = JSON.parse(this.responseText).weekData;
-//         }
-//     };
-//     let url = 'https://autumnfish.cn/' + address;
-//     xhttp.open("GET", url, false);
-//     xhttp.send('{}');
-// }
-// my_songlist('user/record?uid=' + my_id1 + '&type=1', post);
-// console.log(my_song_all);
-// for (var i = 0; i < 15; i++) {
-//     music_name[i].innerHTML = i + 1 + '&nbsp;' + my_song_all[i].song.name;
-//     music_ar_name[i].innerHTML = my_song_all[i].song.ar[0].name;
-// }
-//歌词滚动部分
-var str_box = [];//获取原歌词
-var str_box1 = [];//获取翻译后的歌词
-var str = [];
-var str1 = [];
-function lyric_attain(address, callback) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            callback();
-            str_box = JSON.parse(this.responseText).lrc;//获取的是原歌词
-        }
-    };
-    let url = 'https://autumnfish.cn/' + address;
-    xhttp.open("GET", url, false);
-    xhttp.send('{}');
-}
-function lyric_attain1(address, callback) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            callback();
-            str_box1 = JSON.parse(this.responseText).tlyric;//获取的是翻译后的歌词
-        }
-    };
-    let url = 'https://autumnfish.cn/' + address;
-    xhttp.open("GET", url, false);
-    xhttp.send('{}');
-}
-lyric_attain('lyric?id=' + song_id, post);
-lyric_attain1('lyric?id=' + song_id, post);
-str = str_box.lyric;
-str1 = str_box1.lyric;
-//console.log(str);
-var lrc = [];
-var timer = []
-var arr = str.split('\n')//以回车作为分隔符 分割歌词
-var reg = /\[(\d{2}:\d{2})\.\d{2,3}\](.+)/
-var change_lrc = str1.split(/\s*\n*\[.*?\]\s*/).filter(v => !!v)
-//console.log(change_lrc)//提取翻译后的歌词
-//正则表达式匹配字符
-//嵌入翻译后的歌词
-for (var i = 0; i < arr.length; i++) {
-    arr[i] = arr[i] + "\n" + change_lrc[i];
-}
-arr.forEach(function (a) {
-    //forEach for循环的简化写法
-    if (reg.exec(a) != null) {
-        timer.push(reg.exec(a)[1])//推入歌词对应时间的项
-        lrc.push(reg.exec(a)[2])//推入对应歌词的项
-    }
-})
-//console.log(arr);
-var ul = document.querySelector('.lyric')
-var frg = document.createDocumentFragment()
-lrc.forEach(function (a) {
-    var li = document.createElement('li')
-    //while (a.indexOf("\\n") >= 0) { a = a.replace("\\n", " \n "); }
-    li.innerText = a
-    console.log(a);
-    frg.appendChild(li)
-    //forEach for循环的简化写法
-})
-ul.appendChild(frg)
-//var ad = document.querySelector('audio')
-var currtime;//定义全局变量 进度条变化 歌曲正常播放 歌词随之变化滚动
-mym.ontimeupdate = function () {
-    currtime = parseInt(this.currentTime)//返回十进制整数
-    var mins = parseInt(currtime / 60)
-    var secs = currtime % 60
-    if (mins < 10) mins = '0' + mins
-    if (secs < 10) secs = '0' + secs
-    var timstr = mins + ':' + secs
-    timer.forEach(function (a, i) {
-        if (a == timstr) {
-            ul.style.top = 40 - i * 33 + 'px'
-            for (var j = 0; j < ul.children.length; j++) {
-                ul.children[j].className = ''
-            }
-            ul.children[i].className = 'active'
-        }
-    })
-}
+
 
 //热门评论和歌曲列表tab栏切换
 var head1 = document.querySelectorAll('.head1');
@@ -301,31 +338,25 @@ for (var i = 0; i < 2; i++) {
 }
 
 //获取歌曲评论模块
-var review_box = document.querySelector('.review_box');
 var review_songlist_box = document.querySelector('.review_songlist_box');
-var review_img = review_box.querySelectorAll('.review_img');
-var nickname = review_box.querySelectorAll('.nickname');
-var view = review_box.querySelectorAll('.view');
-let review_str = [];//存放评论相关数据
-function review(address, callback) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            callback();
-            review_str = JSON.parse(this.responseText).hotComments;
+function review(u, song_id) {
+    $ajax({
+        url: 'https://autumnfish.cn/' + u + song_id + '&limit=1',
+        success: function (response) {
+            var review_str = JSON.parse(response).hotComments;//存放评论相关数据
+            for (var i = 0; i < 15; i++) {
+                var review_box = document.querySelector('.review_box');
+                var review_img = review_box.querySelectorAll('.review_img');
+                var nickname = review_box.querySelectorAll('.nickname');
+                var view = review_box.querySelectorAll('.view');
+                review_img[i].src = review_str[i].user.avatarUrl;
+                nickname[i].innerHTML = review_str[i].user.nickname;
+                view[i].innerHTML = review_str[i].content;
+            }
         }
-    };
-    let url = 'https://autumnfish.cn/' + address;
-    xhttp.open("GET", url, false);
-    xhttp.send('{}');
+    })
 }
-review('/comment/music?id=' + song_id + '&limit=1', post);
-// console.log(review_str);
-for (var i = 0; i < 15; i++) {
-    review_img[i].src = review_str[i].user.avatarUrl;
-    nickname[i].innerHTML = review_str[i].user.nickname;
-    view[i].innerHTML = review_str[i].content;
-}
+review('/comment/music?id=', song_id)
 //经过评论部分显示滚动条
 review_songlist_box.style.overflowY = 'hidden';
 review_songlist_box.addEventListener('mouseover', function () {

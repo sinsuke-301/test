@@ -1,23 +1,25 @@
 // 获取存储的数据
-//window.localStorage.getItem('img_url');
 image.src = sessionStorage.getItem('img_url');
-//window.localStorage.getItem('nickname');
 login_name.innerHTML = sessionStorage.getItem('nickname');
 var my_id1 = [];//获取用户id
 my_id1 = sessionStorage.getItem('my_id');
 console.log(my_id1);
-//获取用户信息
-var phonewords = sessionStorage.getItem('phonewords');
-var secretwords = sessionStorage.getItem('secretwords');
-// console.log(phonewords);
-// console.log(secretwords);
+
+//二次存储 跳转首页保存登陆状态
+window.sessionStorage.setItem('login_img', login_img.src);
+window.sessionStorage.setItem('login_name', login_name.innerHTML);
 
 //个人主页部分
 var person_head = document.querySelector('.person_head');
 var person_name = document.querySelector('.name');
 person_head.src = image.src;
 person_name.innerHTML = login_name.innerHTML;
-
+//点击logo返回首页
+var logo = document.querySelector('.logo');
+logo.onclick = function () {
+    //记录浏览历史，可实现后退功能
+    location.assign('index.html');
+}
 function post() {
     //alert('成功发送了请求');
 }
@@ -26,7 +28,7 @@ function person(u, my_id1) {
     $ajax({
         url: baseUrl + u,
         data: {
-            id: my_id1
+            uid: my_id1
         },
         success: function (response) {
             var xhr = JSON.parse(response).profile;//获取用户信息
@@ -35,27 +37,14 @@ function person(u, my_id1) {
         }
     })
 }
-person('user/detail?uid=', my_id1);
-// function person(address, callback) {
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState == 4 && this.status == 200) {
-//             callback();
-//             xhr = JSON.parse(this.responseText).profile;
-//         }
-//     };
-//     let url = baseUrl + address;
-//     xhttp.open("GET", url, false);
-//     xhttp.send('{}');
-// }
-// person('user/detail?uid=' + my_id1, post);
-// var fans = document.querySelector('.fans');
-// fans.innerHTML = '关注：' + xhr.follows + ' | 粉丝：' + xhr.followeds;
-//console.log(xhr.follows);
-//console.log(xhr.followeds);
-
+person('user/detail', my_id1);
 //获取用户最近在听
 let my_song = [];
+var fav_music = document.querySelector('.fav_music');
+var song_name = fav_music.querySelectorAll('.song_name');
+var ar_name = fav_music.querySelectorAll('.ar_name');
+var al_name = fav_music.querySelectorAll('.al_name');
+var time = document.querySelectorAll('.time');
 function my_songlist(address, callback) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -70,10 +59,30 @@ function my_songlist(address, callback) {
 }
 my_songlist('user/record?uid=' + my_id1 + '&type=1', post);
 console.log(my_song);
-var fav_music = document.querySelector('.fav_music');
-var song_name = fav_music.querySelectorAll('.song_name');
-var ar_name = fav_music.querySelectorAll('.ar_name');
-var al_name = fav_music.querySelectorAll('.al_name');
+//获取音乐的时长 传递song_id参数
+var music_box = document.querySelector('.music_box');
+function music_time(song_id, text) {
+    music_box.src = 'https://music.163.com/song/media/outer/url?id=' + song_id + '.mp3';
+    music_box.load();
+    console.log(song_id);
+    music_box.addEventListener('loadedmetadata', function () {
+        let hour = Math.floor(music_box.duration / 3600);
+        let other = music_box.duration % 3600;
+        let minute = Math.floor(other / 60);
+        let second = Math.floor(other % 60);
+        (hour < 10) && (hour = "0" + hour);
+        (minute < 10) && (minute = "0" + minute);
+        (second < 10) && (second = "0" + second);
+        text.innerHTML = minute + ':' + second;
+        console.log(minute + ':' + second);
+        //console.log(num);
+    })
+}
+for (var i = 0; i < time.length; i++) {
+    time[i].setAttribute('index', i);
+    var num = i;
+    music_time(my_song[num].song.id, time[num]);
+}
 for (var i = 0; i < 15; i++) {
     //建立自定义属性
     song_name[i].setAttribute('index', i);
@@ -98,6 +107,7 @@ for (var i = 0; i < 15; i++) {
         window.sessionStorage.setItem('index', index);
     })
 }
+
 // 我创建的歌单部分
 let my_playlist = [];
 function playlist(address, callback) {
@@ -122,10 +132,7 @@ for (var i = 0; i < 10; i++) {
     songlis_a[i].innerHTML = my_playlist[i].name;
     songlist_id[i] = my_playlist[i].id;
 }
-//获取用户歌单的前十首歌
-var song_name1 = songlist.querySelectorAll('.song_name');
-var ar_name1 = songlist.querySelectorAll('.ar_name');
-var al_name1 = songlist.querySelectorAll('.al_name');
+console.log(my_playlist);
 var songlist_box = songlist.querySelectorAll('.box');
 let my_song1 = [];
 function my_songlist1(address, callback) {
@@ -140,34 +147,15 @@ function my_songlist1(address, callback) {
     xhttp.open("GET", url, false);
     xhttp.send('{}');
 }
-console.log(my_song1);
+//console.log(my_song1);
 for (var i = 0; i < songlist_box.length; i++) {
     songlist_box[i].setAttribute('index', i);
     songlist_box[i].onclick = function () {
         var index = this.getAttribute('index');
         my_songlist1('/playlist/detail?id=' + songlist_id[index], post);
+        window.sessionStorage.setItem('rec_id', songlist_id[index]);
+        location.assign('index_song.html');
         console.log(my_song1);
-        for (j = 0; j < 15; j++) {
-            //建立自定义属性
-            song_name1[j].setAttribute('index1', j);
-            song_name1[j].innerHTML = my_song1.tracks[j].name;
-            ar_name1[j].innerHTML = my_song1.tracks[j].ar[0].name;
-            al_name1[j].innerHTML = my_song1.tracks[j].al.name;
-            //测试点击歌曲跳转音乐播放界面
-            song_name1[j].addEventListener('click', function () {
-                //记录浏览历史，可实现后退功能
-                location.assign('play.html');
-                //获取自定义属性
-                var index1 = this.getAttribute('index1');
-                console.log(index1);
-                //获取点击歌曲的id并进行存储 存储歌曲名称 歌手
-                console.log(my_song[index1].song.id);
-                window.sessionStorage.setItem('song_id', my_song1.tracks[index1].id);
-                window.sessionStorage.setItem('song_pic', my_song1.tracks[index1].al.picUrl);
-                window.sessionStorage.setItem('song_name', my_song1.tracks[index1].name);
-                window.sessionStorage.setItem('singer_name', my_song1.tracks[index1].ar[0].name);
-            })
-        }
     }
 }
 window.addEventListener('load', function () {
@@ -194,25 +182,30 @@ window.addEventListener('load', function () {
             }
         }
     }
-    //tab栏切换部分
-    var tab = document.querySelectorAll('.tab');
-    var tab_box = document.querySelectorAll('.tab_box');
-    //先隐藏歌单部分盒子
-    tab_box[1].style.display = 'none';
-    for (var i = 0; i < tab.length; i++) {
-        tab[i].setAttribute('index', i);
-        tab[i].onclick = function () {
-            for (var i = 0; i < tab.length; i++) {
-                tab[i].className = 'tab';
-            }
-            this.className = 'tab selected';
-            var index = this.getAttribute('index');
-            for (var i = 0; i < tab.length; i++) {
-                tab_box[i].style.display = 'none';
-            }
-            tab_box[index].style.display = 'block';
+    //点击我创建的歌单跳转到指定位置
+    var linkc = document.querySelector('#linkc')
+    var songlist_c = document.querySelector('#songlist_c')
+    function to(toEl) {
+        // toEl 为指定跳转到该位置的DOM节点   
+        let bridge = toEl;
+        let body = document.body;
+        let height = 0;
+        // 计算该 DOM 节点到 body 顶部距离  
+        do {
+            height += bridge.offsetTop;
+            bridge = bridge.offsetParent;
         }
+        while (bridge !== body)
+        // 滚动到指定位置  
+        window.scrollTo({
+            top: height,
+            behavior: 'smooth'
+        })
     }
+    linkc.addEventListener('click', function () {
+        to(songlist_c)
+    });
+
     // 图标的显示部分
     var icon_box = document.querySelectorAll('.icon_box');
     var songlist_li = document.querySelectorAll('.songlist_li');

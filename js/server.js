@@ -1,3 +1,28 @@
+window.addEventListener('load', function () {
+    var user_name = sessionStorage.getItem('login_name');
+    var user_img = sessionStorage.getItem('login_img');
+    console.log(user_name);
+    console.log(user_img);
+    //判断页面是否第一次打开
+    if (!window.name) {
+        //console.log("第一次打开");
+        window.name = "myname" //第一次打开时设置name
+        localStorage.clear(); //清全部缓存
+
+    }
+    else if (sessionStorage.getItem('nickname') == null) {
+        //二次刷新页面且还未登录
+    }
+    else if (sessionStorage.getItem('login_name') == sessionStorage.getItem('nickname')) {
+        back_new.style.display = 'block';
+        image.style.display = 'block';
+        login_name.style.display = 'inline-block';
+        image.src = sessionStorage.getItem('login_img');
+        login_name.innerHTML = sessionStorage.getItem('login_name');
+        login_btn1.style.display = 'none';
+    }
+
+})
 let baseUrl = 'https://autumnfish.cn/'
 function post() {
     //alert('成功发送了请求')
@@ -32,6 +57,29 @@ image.addEventListener('click', function () {
     //记录浏览历史，可实现后退功能
     location.assign('Mymusic.html');
 })
+//我的音乐页面跳转
+var my_music = document.querySelector('.my_music');
+my_music.onclick = function () {
+    //判断是否登录
+    if (sessionStorage.getItem('login_name') || sessionStorage.getItem('nickname')) {
+        location.assign('Mymusic.html');
+    }
+    else {
+        login_box.style.display = 'block';
+    }
+
+}
+//退出按钮点击事件
+back_new.onclick = function () {
+    //sessionStorage.clear()//删除全部信息
+    //删除用户信息
+    sessionStorage.removeItem('login_name');
+    sessionStorage.removeItem('nickname');
+    sessionStorage.removeItem('login_img');
+    sessionStorage.removeItem('user_cookie');
+    location.assign(location)
+    //强制从服务器重新加载当前页面 即刷新
+}
 function login(address, callback) {
     let http = new XMLHttpRequest();
     // http.withCredentials = true 部分请求或许需要该配置，具体请先查看文档
@@ -42,6 +90,8 @@ function login(address, callback) {
                 img_url = JSON.parse(http.responseText).profile.avatarUrl;
                 nickname = JSON.parse(http.responseText).profile.nickname;
                 cookie = JSON.parse(http.responseText).cookie;
+                // login_status = JSON.parse(http.responseText).loginType;
+                // window.sessionStorage.setItem('login_status', login_status);
                 image.src = img_url;
                 login_name.innerHTML = nickname;
                 my_id = JSON.parse(http.responseText).account.id;
@@ -72,9 +122,4 @@ function login(address, callback) {
     let url = baseUrl + address;
     http.open("GET", url, true);
     http.send('');
-    //退出按钮点击事件
-    back_new.onclick = function () {
-        window.location.reload(true);
-        //强制从服务器重新加载当前页面
-    }
 }

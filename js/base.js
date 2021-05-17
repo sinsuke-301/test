@@ -1,5 +1,27 @@
 //等页面加载完全部元素，获取完所有元素的属性
 window.addEventListener('load', function () {
+    // 侧边栏返回顶部模块
+    var back = document.querySelector('.back');
+    var timer;//用来存储计时器的变量
+    back.addEventListener('click', function () {
+        clearInterval(timer);//停止上次的定时器（防止连点，滚动速度加快）
+        timer = setInterval(function () {
+            //判断是否回到顶部
+            if (window.pageYOffset != 0) {
+                //若未返回顶部就在移动一点距离
+                window.scroll(0, Math.max(window.pageYOffset - 60, 0));
+            } else {
+                //返回顶部则停止计时器 
+                clearInterval(timer);
+            }
+        }, 10);
+    })
+    //返回上一页面
+    var his_btn = document.querySelector('.his_btn');
+    his_btn.onclick = function () {
+        window.history.go(-1);
+        //location.reload();
+    }
     //歌单推荐播放效果
     var banner_one = document.querySelector('.banner_one');
     var boxes = banner_one.querySelectorAll('.image');

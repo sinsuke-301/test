@@ -32,12 +32,20 @@
 </head>
 
 <body>
+    <!-- 侧边栏返回顶部 -->
+    <aside>
+        <span class="iconfont back">&#xe613;</span>
+        <span class="iconfont">&#xeaa3;</span>
+        <span class="iconfont his_btn">&#xe62b;</span>
+    </aside>
+    <!-- 获取音乐时长测试用的audio -->
+    <audio src="" class="music_box" style="display: none;"></audio>
     <!-- 头部导航栏模块 -->
     <nav>
         <div class="nav_box">
             <!-- 上半部分 -->
             <div class="nav_top">
-                <img src="./images/logo1.png" alt="">
+                <img src="./images/logo1.png" alt="" class="logo">
                 <ul>
                     <li>音乐馆</li>
                     <li><a href="#">我的音乐</a></li>
@@ -50,9 +58,9 @@
                     <!-- <a href="#" class="login_btn1" style="margin: 0 0 0 5px;">登录</a> -->
                     <img src="" alt="" id="login_img" style="cursor: pointer;">
                     <span id="login_name"></span>
-                    <a href="#" class="nav_special">充值</a>
+                    <!-- <a href="#" class="nav_special">充值</a> -->
                     <a href="#" class="nav_special">开通VIP</a>
-                    <span href="#" id="back_new">退出</span>
+                    <!-- <span href="#" id="back_new">退出</span> -->
                 </div>
                 <div class="search">
                     <span class="iconfont find">&#xe617;</span>
@@ -78,8 +86,8 @@
                 <p class="fans"></p>
             </div>
             <ul>
-                <li><a href="javascript:;" class="tab selected">我喜欢</a></li>
-                <li><a href="javascript:;" class="tab">我创建的歌单</a></li>
+                <li><a href="javascript:;" class="selected">我喜欢</a></li>
+                <li><a href="javascript:;" id="linkc">我创建的歌单</a></li>
                 <li><a href="javascript:;">关注</a></li>
                 <li><a href="javascript:;">粉丝</a></li>
                 <li><a href="javascript:;">我上传的视频</a></li>
@@ -87,13 +95,13 @@
         </div>
     </section>
     <!-- 喜欢的音乐模块 -->
-    <section class="fav_music tab_box">
-        <a href="#" class="start"><span class="iconfont">&#xe688;</span>&nbsp;播放全部</a>
+    <section class="fav_music">
+        <a href="javascript:;" class="start"><span class="iconfont">&#xe688;</span>&nbsp;播放全部</a>
         <div class="fav_head">
             <span style="margin-right:500px;">歌曲</span>
             <span style="margin-right: 250px;">歌手</span>
             <span style="margin-right: 200px;">专辑</span>
-            <span>时长</span>
+            <!-- <span>时长</span> -->
         </div>
         <ul class="my_songlist">
             <li class="songlist_li">
@@ -101,7 +109,7 @@
                 <span class="song_name play_text"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <!-- 播放 添加 评论 下载 的小图标部分 -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
@@ -115,7 +123,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -128,7 +136,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -141,7 +149,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -154,7 +162,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -167,7 +175,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -180,7 +188,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -193,7 +201,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -206,7 +214,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -219,7 +227,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -232,7 +240,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -245,7 +253,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -258,7 +266,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -271,7 +279,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -284,7 +292,7 @@
                 <span class="song_name"></span>
                 <span class="ar_name"></span>
                 <span class="al_name"></span>
-                <span class="time"></span>
+                <!-- <span class="time"></span> -->
                 <div class="icon_box">
                     <span class="iconfont icon_play">&#xe60f;</span>
                     <span class="iconfont">&#xe602;</span>
@@ -295,7 +303,7 @@
         </ul>
     </section>
     <!-- 创建的歌单部分 -->
-    <section class="songlist tab_box">
+    <section class="songlist" id="songlist_c">
         <div class="box_all">
             <div class="box">
                 <div class="image">
@@ -368,150 +376,12 @@
                 <a href="#" class="image_a"></a>
             </div>
         </div>
-        <div class="fav_head">
-            <span style="margin-right:500px;">歌曲</span>
-            <span style="margin-right: 250px;">歌手</span>
-            <span style="margin-right: 200px;">专辑</span>
-            <span>时长</span>
-        </div>
-        <ul class="my_songlist">
-            <li class="songlist_li">
-                <span class="num">1</span>
-                <span class="song_name play_text"></span>
-                <span class="ar_name"></span>
-                <span class="al_name"></span>
-                <span class="time"></span>
-                <div class="icon_box">
-                    <span class="iconfont icon_play">&#xe60f;</span>
-                    <span class="iconfont">&#xe602;</span>
-                    <span class="iconfont">&#xe647;</span>
-                    <span class="iconfont">&#xe601;</span>
-                </div>
-            </li>
-            <li class="songlist_li">
-                <span class="num">2</span>
-                <span class="song_name"></span>
-                <span class="ar_name"></span>
-                <span class="al_name"></span>
-                <span class="time"></span>
-                <div class="icon_box">
-                    <span class="iconfont icon_play">&#xe60f;</span>
-                    <span class="iconfont">&#xe602;</span>
-                    <span class="iconfont">&#xe647;</span>
-                    <span class="iconfont">&#xe601;</span>
-                </div>
-            </li>
-            <li class="songlist_li">
-                <span class="num">3</span>
-                <span class="song_name"></span>
-                <span class="ar_name"></span>
-                <span class="al_name"></span>
-                <span class="time"></span>
-                <div class="icon_box">
-                    <span class="iconfont icon_play">&#xe60f;</span>
-                    <span class="iconfont">&#xe602;</span>
-                    <span class="iconfont">&#xe647;</span>
-                    <span class="iconfont">&#xe601;</span>
-                </div>
-            </li>
-            <li class="songlist_li">
-                <span class="num">4</span>
-                <span class="song_name"></span>
-                <span class="ar_name"></span>
-                <span class="al_name"></span>
-                <span class="time"></span>
-                <div class="icon_box">
-                    <span class="iconfont icon_play">&#xe60f;</span>
-                    <span class="iconfont">&#xe602;</span>
-                    <span class="iconfont">&#xe647;</span>
-                    <span class="iconfont">&#xe601;</span>
-                </div>
-            </li>
-            <li class="songlist_li">
-                <span class="num">5</span>
-                <span class="song_name"></span>
-                <span class="ar_name"></span>
-                <span class="al_name"></span>
-                <span class="time"></span>
-                <div class="icon_box">
-                    <span class="iconfont icon_play">&#xe60f;</span>
-                    <span class="iconfont">&#xe602;</span>
-                    <span class="iconfont">&#xe647;</span>
-                    <span class="iconfont">&#xe601;</span>
-                </div>
-            </li>
-            <li class="songlist_li">
-                <span class="num">6</span>
-                <span class="song_name"></span>
-                <span class="ar_name"></span>
-                <span class="al_name"></span>
-                <span class="time"></span>
-                <div class="icon_box">
-                    <span class="iconfont icon_play">&#xe60f;</span>
-                    <span class="iconfont">&#xe602;</span>
-                    <span class="iconfont">&#xe647;</span>
-                    <span class="iconfont">&#xe601;</span>
-                </div>
-            </li>
-            <li class="songlist_li">
-                <span class="num">7</span>
-                <span class="song_name"></span>
-                <span class="ar_name"></span>
-                <span class="al_name"></span>
-                <span class="time"></span>
-                <div class="icon_box">
-                    <span class="iconfont icon_play">&#xe60f;</span>
-                    <span class="iconfont">&#xe602;</span>
-                    <span class="iconfont">&#xe647;</span>
-                    <span class="iconfont">&#xe601;</span>
-                </div>
-            </li>
-            <li class="songlist_li">
-                <span class="num">8</span>
-                <span class="song_name"></span>
-                <span class="ar_name"></span>
-                <span class="al_name"></span>
-                <span class="time"></span>
-                <div class="icon_box">
-                    <span class="iconfont icon_play">&#xe60f;</span>
-                    <span class="iconfont">&#xe602;</span>
-                    <span class="iconfont">&#xe647;</span>
-                    <span class="iconfont">&#xe601;</span>
-                </div>
-            </li>
-            <li class="songlist_li">
-                <span class="num">9</span>
-                <span class="song_name"></span>
-                <span class="ar_name"></span>
-                <span class="al_name"></span>
-                <span class="time"></span>
-                <div class="icon_box">
-                    <span class="iconfont icon_play">&#xe60f;</span>
-                    <span class="iconfont">&#xe602;</span>
-                    <span class="iconfont">&#xe647;</span>
-                    <span class="iconfont">&#xe601;</span>
-                </div>
-            </li>
-            <li class="songlist_li">
-                <span class="num">10</span>
-                <span class="song_name"></span>
-                <span class="ar_name"></span>
-                <span class="al_name"></span>
-                <span class="time"></span>
-                <div class="icon_box">
-                    <span class="iconfont icon_play">&#xe60f;</span>
-                    <span class="iconfont">&#xe602;</span>
-                    <span class="iconfont">&#xe647;</span>
-                    <span class="iconfont">&#xe601;</span>
-                </div>
-            </li>
-        </ul>
     </section>
     <!-- 底端部分 -->
-    <footer>
-        <div class="footer_all" style="margin: 500px 0 0 0;">
+    <footer style="margin-top: -1480px;">
+        <div class="footer_all">
             <div class="footer_left">
-                <p>下载QQ音乐客户端</p>
+                <p>下载DOG音乐客户端</p>
                 <ul>
                     <li>
                         <a href="#">
@@ -587,7 +457,7 @@
             </div>
             <div class="footer_box1">
                 <p>开放平台</p>
-                <a href="#">QQ音乐开放平台</a>
+                <a href="#">DOG音乐开放平台</a>
                 <a href="#">腾讯音乐人</a>
             </div>
             <div class="footer_box1">

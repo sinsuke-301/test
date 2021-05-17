@@ -23,21 +23,6 @@ window.addEventListener('load', function () {
     }
     //设置一个存放搜索结果的数组
     // let res = []
-    //这是一个用来发起请求的函数
-    // function search(address, callBack) {
-    //     var xhttp = new XMLHttpRequest();
-    //     xhttp.onreadystatechange = function () {
-    //         if (this.readyState == 4 && this.status == 200) {
-    //             callBack()
-    //             //将请求结果存放到全局对象中
-    //             res = JSON.parse(this.responseText).result.hots
-    //             //获取热门搜索信息
-    //         }
-    //     };
-    //     let url = baseUrl + address
-    //     xhttp.open("GET", url, false);
-    //     xhttp.send('{}');
-    // }
     //获取html的div元素
     //动态渲染
     let ul = document.getElementById('search_menu')
@@ -51,46 +36,54 @@ window.addEventListener('load', function () {
                 //console.log(res);
                 for (let i = 0; i < res.length - 5; i++) {
                     //将其文本内容设置为对应的请求结果
+                    lis[i].setAttribute('index', i);
                     lis[i].innerText = i + 1 + '         ' + res[i].first
                 }
             }
         })
     }
     search_hots('/search/hot');
-    //调用函数发起请求
-    //search('/search/hot', post)
-
     //搜索栏索引部分
     let active_search = '/search/suggest?';
     //let res1 = [];
+    function song_datail(u, song_id) {
+        $ajax({
+            url: baseUrl + u,
+            data: {
+                ids: song_id,
+            },
+            success: function (response) {
+                var detail = JSON.parse(response).songs[0];
+                //console.log(detail);
+                window.sessionStorage.setItem('song_pic', detail.al.picUrl);
+                window.sessionStorage.setItem('song_name', detail.name);
+                window.sessionStorage.setItem('singer_name', detail.ar[0].name);
+                location.assign('play.html');
+            }
+        })
+    }
     function search1(u, content) {
         $ajax({
-            url: baseUrl + u + '&type=mobile',
+            url: baseUrl + u + '&limit=5',
             data: {
                 keywords: content,
             },
             success: function (response) {
                 var res1 = JSON.parse(response).result.songs;
-                //console.log(res1);
                 for (var i = 0; i < lis.length - 1; i++) {
+                    lis[i].setAttribute('index', i);
                     lis[i].innerText = i + 1 + '         ' + res1[i].name;
+                    lis[i].onclick = function () {
+                        var index = this.getAttribute('index');
+                        window.sessionStorage.setItem('index', index);
+                        window.sessionStorage.setItem('song_id', res1[index].id);
+                        song_datail('/song/detail', sessionStorage.getItem('song_id'));
+                        //location.assign('play.html');
+                    }
                 }
             }
         })
     }
-    // function search1(address, callBack) {
-    //     var xhttp = new XMLHttpRequest();
-    //     xhttp.onreadystatechange = function () {
-    //         if (this.readyState == 4 && this.status == 200) {
-    //             callBack()
-    //             //将请求结果存放到全局对象中
-    //             res1 = JSON.parse(this.responseText).result.allMatch;
-    //         }
-    //     };
-    //     let url = baseUrl + address + '&type=mobile';
-    //     xhttp.open("GET", url, false);
-    //     xhttp.send('{}');
-    // }
     let sth = [];
     var search = document.querySelector('.search');
     var search_input = search.querySelector('input');
@@ -100,6 +93,7 @@ window.addEventListener('load', function () {
             sth = search_input.value;
             //search1(active_search + sth, post);
             search1('/search/suggest', sth);
+            // song_datail('/song/detail', sessionStorage.getItem('song_id'));
         }
         else {
             search_hots('/search/hot');
@@ -118,6 +112,9 @@ window.addEventListener('load', function () {
                     ul.removeChild(this.parentNode);//a的父亲就是li
                 }
             }
+            //存储搜索的关键词
+            window.sessionStorage.setItem('keywords', sth);
+            location.assign('search.html');//历史记录会保存不了，之后改改
         }
     }
 })
