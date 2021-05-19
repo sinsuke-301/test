@@ -14,3 +14,7 @@
 2021/05/15 21:18:54 [emerg] 18224#12896: CreateFile() "C:\Users\82068\Desktop\Ç°¶Ë\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
 2021/05/15 21:19:10 [emerg] 8872#5768: CreateFile() "C:\Users\82068\Desktop\Ç°¶Ë\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
 2021/05/15 21:19:21 [emerg] 16752#17292: CreateFile() "C:\Users\82068\Desktop\Ç°¶Ë\nginx-1.20.0/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/19 15:50:00 [emerg] 13592#15824: CreateFile() "C:\Users\82068\Desktop\text\¶þÂÖ¿¼ºË/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/19 15:51:48 [emerg] 11768#11752: CreateFile() "C:\Users\82068\Desktop\text\¶þÂÖ¿¼ºË/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/19 15:53:25 [emerg] 12764#8656: CreateFile() "C:\Users\82068\Desktop\text\¶þÂÖ¿¼ºË/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/19 15:54:05 [emerg] 15636#14172: CreateFile() "C:\Users\82068\Desktop\text\¶þÂÖ¿¼ºË/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
