@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            height: 250px;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            border: 2px solid blue;
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p align="center">咒术回战人物</p>
+    <!-- 下列属性要写到table的里面去 -->
+    <!-- 基本单元格标签内容 -->
+    <table align="center">
+        <!-- 上述的元素在后面css会用到，记住英文单词即可 -->
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>百度百科</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <td>五条悟</td>
+                <td>28</td>
+                <td><a href="#">百度</a> <a href="#">介绍</a> <a href="#">背景</a></td>
+            </tr>
+            <tr>
+                <td>虎杖悠仁</td>
+                <td>15</td>
+                <td><a href="#">百度</a> <a href="#">介绍</a> <a href="#">背景</a></td>
+            </tr>
+            <tr>
+                <td>伏黑惠</td>
+                <td>15</td>
+                <td><a href="#">百度</a> <a href="#">介绍</a> <a href="#">背景</a></td>
+            </tr>
+            <tr>
+                <td>钉绮野蔷薇</td>
+                <td>15</td>
+                <td><a href="#">百度</a> <a href="#">介绍</a> <a href="#">背景</a></td>
+            </tr>
+        </thead>
+    </table>
+    <!-- 合并单元格的使用 -->
+    <table align="center" border="1" cellspacing="0" cellpadding="50" width="500" height="250">
+        <tr>
+            <td></td>
+            <td colspan="2"></td>
+            <!-- 跨列合并 -->
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <h4>无序列表</h4>
+    <ul>
+        <li>其中只能存在li,而不能有其他东西例如p</li>
+        <li>但可以在li中存放其他标签例如下例所示</li>
+        <li>
+            <p>我是重点内容！！</p>
+        </li>
+    </ul>
+    <h4>自定义列表</h4>
+    <dl>
+        <dt>关注我们</dt>
+        <dd>新浪微博</dd>
+        <dd>官方微信</dd>
+        <dd>联系我们</dd>
+    </dl>
+    <!-- 上述两个列表是重点，而有序列表了解即可 -->
+    <h4>有序列表</h4>
+    <p>战力排行榜</p>
+    <ol>
+        <li>五条悟</li>
+        <li>乙骨忧太</li>
+        <li>夏油杰</li>
+    </ol>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        var datas = [
+            {
+                name: '太宰治',
+                subject: 'javascri',
+                score: 100
+            }, {
+                name: '中岛敦',
+                subject: 'javascri',
+                score: 90
+            }, {
+                name: '介川龙之介',
+                subject: 'javascri',
+                score: 95
+            }, {
+                name: '条野采菊',
+                subject: 'javascri',
+                score: 99
+            },
+        ];
+        //往tbody里面创建行：有几个人（通过数组的长度），我们就创建几行
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            //行里面创建单元格(跟数据有关系) td 取决于每个对象里里面的属性个数
+            for (var k in datas[i]) {// 这里的for管列 td
+                var td = document.createElement('td');
+                //把对象的属性值datas[i][k]给td 属性名datas[i]
+                td.innerHTML = datas[i][k];
+                tr.appendChild(td);
+            }
+            //3.创建有删除的单元格 多创建一个单元格
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">删除</a>'
+            tr.appendChild(td);
+        }
+        //删除操作
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                //点击a删除 当前a所在的行tr（a的爸爸td的爸爸tbody）
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>

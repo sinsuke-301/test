@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .box a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 36px;
+            font-size: 14px;
+            text-decoration: none;
+            color: grey;
+        }
+
+        .box .page {
+            width: 85px;
+            height: 36px;
+        }
+
+        .box input {
+            width: 45px;
+            height: 36px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .box button {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #ccc;
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="#" class="page">&lt;&lt;上一页</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">...</a>
+        <a href="#" class="page">&gt;&gt;下一页</a>
+        到第
+        <input type="text">
+        页
+        <button>确定</button>
+    </div>
+    <script>
+        //利用排他思想
+        var btns = document.getElementsByTagName('a');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                for (i = 0; i < btns.length; i++) {
+                    btns[i].style.borderColor = '#ccc';
+                    btns[i].style.backgroundColor = '#f7f7f7';
+                }
+                this.style.borderColor = 'white';
+                this.style.backgroundColor = 'white';
+            }
+        }
+    </script>
+</body>
+
+</html>

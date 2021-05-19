@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOG music</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="./css/play.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <script src="./js/ajax函数.js"></script>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font/iconfont.eot');
+            src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+                url('./font/iconfont.woff2') format('woff2'),
+                url('./font/iconfont.woff') format('woff'),
+                url('./font/iconfont.ttf') format('truetype'),
+                url('./font/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 音乐播放页面 -->
+    <!-- 头部 -->
+    <header class="top">
+        <h1>DOG音乐</h1>
+        <div class="user">
+            <!-- 用户头像和用户名 -->
+            <p id="user_name"></p>
+            <img src="" alt="" id="user_img">
+        </div>
+    </header>
+    <!-- 歌词歌曲部分 -->
+    <section class="album_box">
+        <!-- 歌曲光碟 -->
+        <div class="album">
+            <img src="" alt="" id="album_img">
+        </div>
+    </section>
+    <!-- 歌词部分 -->
+    <section class="lyric_box">
+        <div class="lyric_run">
+            <ul class="lyric"></ul>
+        </div>
+    </section>
+    <!-- 下端播放栏 -->
+    <!-- 音乐播放 -->
+    <section class="music_play">
+        <audio src="" id="mym"></audio>
+        <!-- 歌曲名字和封面 -->
+        <div class="song_box">
+            <img src="" alt="" class="music_img">
+            <span id="song_name"></span>
+            <span id="singer_name"></span>
+        </div>
+        <!-- 播放图标 位于头部-->
+        <div class="broadcast">
+            <!-- 上一首图标 -->
+            <span class="rewind iconfont" id="rewind">&#xe8a8;</span>
+            <span class="play iconfont" id="play">&#xe76a;</span>
+            <!-- 下一首图标 -->
+            <span class="forward iconfont" id="forward">&#xe8a7;</span>
+        </div>
+        <!-- 进度条 -->
+        <div class="jindu_bg" id="jindu_bg">
+            <div class="jindu_color" id="jindu_color">
+            </div>
+        </div>
+        <!-- 音量图标 -->
+        <div id="voice_box">
+            <span id="jy" class="iconfont">&#xe80c;</span>
+            <div id="voice">
+                <span id="voice_span"></span>
+            </div>
+            <p id="p1"></p>
+        </div>
+        <!-- 显示的时间 -->
+        <div class="music_time">
+            <span class="current" id="current">00:00</span>
+            <span class="xian">/</span>
+            <span class="totalTime" id="totalTime">00:00</span>
+        </div>
+    </section>
+    <!-- 歌曲评论模块 和歌曲列表合并（tab栏切换）-->
+    <section class="review_songlist">
+        <div class="head">
+            <span class="head1 selected">热门评论</span>
+            <span class="head1">歌曲列表</span>
+        </div>
+        <div class="review_songlist_box">
+            <div class="review_box music_tab">
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+                <div class="review">
+                    <img src="" alt="" class="review_img">
+                    <span class="nickname"></span>
+                    <p class="view"></p>
+                </div>
+            </div>
+            <!-- 歌曲列表 -->
+            <div class="musiclist music_tab">
+                <ul>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                    <li>
+                        <span class="music_name"></span>
+                        <span class="music_ar_name"></span>
+                        <span class="musictime"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+    <script src="./js/play.js"></script>
+    <script src="./js/server.js"></script>
+    <script src="./js/my_music.js"></script>
+</body>
+
+</html>

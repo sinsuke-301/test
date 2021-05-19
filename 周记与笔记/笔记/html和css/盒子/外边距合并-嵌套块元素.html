@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清楚内外边距，一般作为开头 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            margin-top: 50px;
+            background-color: purple;
+            overflow: hidden;
+            /* 使子元素在父元素内移动位置的关键,否则会固定在左上角 */
+            /* 在父元素内定义边框或内边距均可解决 */
+            /* border: 1px dashed transparent; */
+            /* padding: 1px; */
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            margin-top: 80px;
+            background-color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

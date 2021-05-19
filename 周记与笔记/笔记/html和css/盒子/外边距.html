@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+            margin: 0 auto;
+            /* 水平居中：1.盒子必须指定宽度 2.左右的外边距必须是auto */
+        }
+
+        .two {
+            width: 200px;
+            height: 200px;
+            /* margin: 20px; */
+            /* 上下左右的外边距均为20px，复合写法与padding相同 */
+            margin-top: 20px;
+            background-color: burlywood;
+        }
+
+        /* 行内元素/行内块元素水平居中对齐 */
+        .head {
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        /* 行内元素/行内块元素水平居中对齐给其父元素添加text-align：center即可 */
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="head">
+        <span>里面的文字</span>
+    </div>
+</body>
+
+</html>

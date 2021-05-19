@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 面试题常考？
+        function unique(arr) {
+            var newarr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newarr.indexOf(arr[i]) === -1) {//判断是否存在该元素，追加元素
+                    newarr.push(arr[i]);
+                }
+            }
+            return newarr;
+        }
+        var demo = unique(['c', 'a', 'b', 'c', 'f', 'a', 'b']);
+        console.log(demo);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

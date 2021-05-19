@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="z.png" alt="">
+    <div>上午好</div>
+    <script>
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        var date = new Date();
+        var h = date.getHours();
+        if (h < 12) {
+            img.src = 'z.png';
+            div.innerHTML = '早上好，该写代码了';
+        } else if (h < 18) {
+            img.src = 'x.png';
+            div.innerHTML = '下午好，该写代码了';
+        } else {
+            img.src = 'w.png';
+            div.innerHTML = '晚上好，该写代码了';
+        }
+    </script>
+</body>
+
+</html>

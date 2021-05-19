@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: burlywood;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+            /* z-index控制盒子的前后次序，数值越大越靠上 */
+            /* 只有定位的盒子才行 */
+            background-color: cadetblue;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background-color: chartreuse;
+        }
+
+        /* 绝对定位水平垂直居中 */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: cornflowerblue;
+            position: absolute;
+            left: 50%;
+            /* 父容器宽度的一半 */
+            margin-left: -100px;
+            /* 往左边走自己盒子宽度的一半 */
+            top: 50%;
+            margin-top: -100px;
+            /* 垂直居中显示 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">盒子1</div>
+    <div class="box2">盒子2</div>
+    <div class="box3">盒子3</div>
+    <div class="box"></div>
+    <!-- 补充：行内元素添加绝对或固定定位，可直接设置高宽 -->
+    <!-- 块级元素，如不设置高宽，默认大小为内容大小 -->
+    <!-- 同浮动相似 -->
+    <!-- 绝对定位会完全压住下面标准流盒子的内容 -->
+    <!-- 浮动只会压住盒子，但不会压住里面的文字，文字会围绕浮动元素实现文字环绕效果 -->
+</body>
+
+</html>

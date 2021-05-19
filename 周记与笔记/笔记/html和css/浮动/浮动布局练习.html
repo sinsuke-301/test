@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top {
+            height: 200px;
+            background-color: cyan;
+        }
+
+        .banner {
+            width: 800px;
+            height: 400px;
+            background-color: rgb(248, 205, 96);
+            margin: 10px auto;
+        }
+
+        .banner>ul>li {
+            float: left;
+            width: 185px;
+            height: 400px;
+            margin-right: 15px;
+            background-color: darkseagreen;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* 清除无序列表前的小圆点 */
+
+        .banner .yi {
+            margin-right: 0;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: deepskyblue;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top"></div>
+    <div class="banner">
+        <ul>
+            <li>盒子1</li>
+            <li>盒子2</li>
+            <li>盒子3</li>
+            <li class="yi">盒子4</li>
+        </ul>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: slategrey;
+            /* transition: 变化的属性 花费时间 运动曲线 何时开始; */
+            /* transition: width 0.5s ease 0.1s; */
+            transition: all 0.5s;
+            /* 若要给所有属性加过渡，使用all */
+        }
+
+        div:hover {
+            width: 400px;
+            height: 200px;
+            background-color: grey;
+        }
+
+        img {
+            width: 500px;
+            height: 338px;
+            transition: all 0.5s;
+        }
+
+        img:hover {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <img src="3.jpg" alt="">
+</body>
+
+</html>

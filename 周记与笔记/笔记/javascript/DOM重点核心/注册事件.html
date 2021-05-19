@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统事件</button>
+    <button>事件监听</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+        //1.传统事件注册事件
+        btns[0].onclick = function () {
+            alert('hi');
+        }
+        btns[0].onclick = function () {
+            alert('hao');
+        }
+        //2.事件侦听注册事件 addEventListener
+        //(1)里面的事件类型是字符串 必定加引号 且不带on
+        //(2)同一元素 同一事件可添加多个侦听器
+        btns[1].addEventListener('click', function () {
+            alert(11);
+        })
+        btns[1].addEventListener('click', function () {
+            alert(22);
+        })
+    </script>
+</body>
+
+</html>

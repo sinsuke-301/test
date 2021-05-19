@@ -1,0 +1,148 @@
+body {
+    background-color: #f7f7f7;
+}
+/* 搜索栏部分 */
+.search_box {
+    position: relative;
+    width: 600px;
+    height: 60px;
+    /* background-color: burlywood; */
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.search_box span {
+    position: absolute;
+    font-size: 30px;
+    cursor: pointer;
+    top: 15px;
+    right: 15px;
+}
+.search_box span:hover {
+    color: skyblue;
+}
+.search_box input {
+    width: 600px;
+    height: 60px;
+    border: 1px solid #408db1;
+    font-size: 18px;
+    padding: 0 0 0 20px;
+}
+/* 呈现的结果部分 */
+.result {
+    width: 1200px;
+    height: 1100px;
+    background-color: #ffffff;
+    margin: 20px auto;
+    padding: 50px 0 0 0;
+}
+.tab {
+    width: 649px;
+    height: 62px;
+    margin: 0 auto;
+    border: 1px solid rgba(128, 128, 128, 0.685);
+    /* background-color: skyblue; */
+}
+.tab span {
+    float: left;
+    padding: 5px 30px;
+    line-height: 50px;
+    background-color: #f7f7f7;
+}
+.tab span:hover {
+    color: skyblue;
+    cursor: pointer;
+}
+.selected {
+    background-color: #ffffff !important;
+    border-bottom: 2px solid skyblue !important;
+    border-left: 1px solid rgba(128, 128, 128, 0.685);
+    border-right: 1px solid rgba(128, 128, 128, 0.685);
+}
+/* 歌手信息部分 */
+.singer_result {
+    width: 1200px;
+    height: 1000px;
+    margin: 50px auto;
+}
+.singer {
+    position: relative;
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 10px 25px;
+}
+.singer img {
+    width: 130px;
+    height: 130px;
+    margin: 0 0 10px 0;
+    cursor: pointer;
+}
+.singer p {
+    width: 100px;
+    /* 2.文字溢出强制一行内显示 */
+    white-space: nowrap;
+    /* 3.溢出部分隐藏 */
+    overflow: hidden;
+    /* 文字溢出以省略号显示 */
+    text-overflow: ellipsis;
+}
+.singer p span {
+    position: absolute;
+    bottom: -8px;
+    right: 25px;
+}
+.singer p:hover {
+    color: skyblue;
+    cursor: pointer;
+}
+/* 歌单信息部分 */
+.songlist_result {
+    width: 1200px;
+    height: 1000px;
+    margin: 50px auto;
+}
+.songlist_result .list_box:nth-child(2n) {
+    background-color: #f7f7f7;
+}
+.list_box {
+    width: 1020px;
+    height: 80px;
+    /* padding: 0 90px; */
+    /* background-color: skyblue; */
+    margin: 10px auto;
+}
+.list_box .list_icon {
+    color: grey;
+    font-size: 25px !important;
+    line-height: 80px;
+}
+.list_box .list_img {
+    width: 50px;
+    height: 50px;
+    margin: 10px 15px;
+}
+.list_name,
+.creator,
+.collect {
+    display: inline-block;
+    /* 2.文字溢出强制一行内显示 */
+    white-space: nowrap;
+    /* 3.溢出部分隐藏 */
+    overflow: hidden;
+    /* 文字溢出以省略号显示 */
+    text-overflow: ellipsis;
+}
+.list_name {
+    width: 500px;
+}
+.list_name:hover {
+    color: skyblue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.creator {
+    width: 200px;
+}
+.collect {
+    width: 125px;
+}

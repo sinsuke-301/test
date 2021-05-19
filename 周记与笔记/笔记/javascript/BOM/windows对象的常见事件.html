@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        //1.window.load 只能写一次
+        //等页面元素加载完才执行里面的程序
+        // window.onload = function () {
+        //     var btn = document.querySelector('button');
+        //     btn.addEventListener('click', function () {
+        //         alert('点击我');
+        //     })
+        // }
+        //2.使用addEventListener则没有限制
+        window.addEventListener('load', function () {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                alert('点击我');
+            })
+        })
+        document.addEventListener('DOMContentLoaded', function () {
+            alert(33);
+        })
+        //3.load 等页面内容全部加载完毕，包含页面dom元素 图片 flash css等
+        //DOMContentLoaded 是DOM加载完毕 不包含图片flash css等就可以执行 加载速度块
+
+    </script>
+</body>
+
+</html>

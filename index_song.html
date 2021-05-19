@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOG音乐</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index_song.css">
+    <script src="./js/animate.js"></script>
+    <script src="./js/base.js"></script>
+    <script src="./js/ajax函数.js"></script>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font/iconfont.eot');
+            src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+                url('./font/iconfont.woff2') format('woff2'),
+                url('./font/iconfont.woff') format('woff'),
+                url('./font/iconfont.ttf') format('truetype'),
+                url('./font/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<!-- 登录模块 -->
+<div class="login" id="login_box">
+    <div class="login_box">
+        <img src="./images/head1.png" alt="" class="head">
+        <span class="close">✖</span>
+        <input type="text" placeholder="请输入手机号码" id="phone">
+        <input type="password" placeholder="请输入密码" id="secret_num">
+        <p id="warn">手机号码或密码输入错误！请重新输入！</p>
+        <button id="login_btn2">登录</button>
+    </div>
+</div>
+<!-- 评论发送提醒 -->
+<div class="remind">
+    <p class="remind_p">评论发送成功！</p>
+    <span class="remind_close">✖</span>
+</div>
+<!-- 侧边栏返回顶部 -->
+<aside>
+    <span class="iconfont back">&#xe613;</span>
+    <span class="iconfont">&#xeaa3;</span>
+    <span class="iconfont his_btn">&#xe62b;</span>
+</aside>
+<!-- 头部导航栏模块 -->
+<nav>
+    <div class="nav_box">
+        <!-- 上半部分 -->
+        <div class="nav_top">
+            <img src="./images/logo1.png" alt="" class="logo">
+            <ul>
+                <li>音乐馆</li>
+                <li><a href="#" class="my_music">我的音乐</a></li>
+                <li><a href="#">客户端</a></li>
+                <li><a href="#">开放平台</a></li>
+                <li><a href="#">VIP</a></li>
+            </ul>
+            <!-- 右端账号开通部分 -->
+            <div class="nav_right">
+                <a href="#" class="login_btn1" style="margin: 0 0 0 5px;">登录</a>
+                <img src="" alt="" id="login_img" style="cursor: pointer;">
+                <span id="login_name"></span>
+                <!-- <a href="#" class="nav_special">充值</a> -->
+                <a href="#" class="nav_special">开通VIP</a>
+                <span href="#" id="back_new">退出</span>
+            </div>
+            <div class="search">
+                <span class="iconfont find">&#xe617;</span>
+                <input type="text" placeholder="搜索音乐、MV、歌单、用户">
+                <ul id="search_menu">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li class="history">历史记录<span class="iconfont">&#xe614;</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 下半部分 -->
+    <div class="nav_bottom_all">
+        <div class="nav_bottom">
+            <a href="#">首页</a>
+            <a href="#">歌手</a>
+            <a href="#">新碟</a>
+            <a href="#">排行榜</a>
+            <a href="#">分类歌单</a>
+            <a href="#">电台</a>
+            <a href="#">MV</a>
+            <a href="#">数字专辑</a>
+            <a href="#">票务</a>
+        </div>
+    </div>
+</nav>
+<!-- 歌单推荐详细页面 -->
+<section>
+    <!-- 左侧部分：歌单信息及评论 -->
+    <div class="banner_left">
+        <!-- 顶部歌单信息部分 -->
+        <div class="head">
+            <div class="img_box">
+                <img src="" alt="" class="head_img" style="z-index: 9;">
+                <img src="./images/album.png" alt="" class="album" style="left: 20px;">
+            </div>
+            <h1 class="rec_head"></h1>
+            <div class="ar_box">
+                <img src="" alt="" class="ar_img">
+                <h4 class="rec_ar"></h4>
+            </div>
+            <ul>
+                <li class="rec_tag">标签：</li>
+                <li class="subscribedCount"></li>
+                <li class="playCount"></li>
+            </ul>
+            <!-- 三个按钮部分 -->
+            <div class="btn_box">
+                <span class="iconfont">&#xe688; 播放全部</span>
+                <span class="iconfont">&#xe602; 收藏</span>
+                <span class="iconfont" id="linkc">&#xe647; 评论</span>
+            </div>
+        </div>
+    </div>
+    <!-- 导入的音乐部分 -->
+    <div class="fav_music tab_box">
+        <div class="fav_head">
+            <span style="margin-right:320px;">歌曲</span>
+            <span style="margin-right: 140px;">歌手</span>
+            <span style="margin-right: 140px;">专辑</span>
+            <!-- <span>时长</span> -->
+        </div>
+        <ul class="my_songlist">
+            <li class="songlist_li">
+                <span class="num">1</span>
+                <span class="song_name play_text"></span>
+                <span class="ar_name"></span>
+                <span class="al_name"></span>
+                <!-- <span class="time"></span> -->
+                <!-- 播放 添加 评论 下载 的小图标部分 -->
+                <div class="icon_box">
+                    <span class="iconfont icon_play">&#xe60f;</span>
+                    <span class="iconfont">&#xe602;</span>
+                    <span class="iconfont">&#xe647;</span>
+                    <span class="iconfont">&#xe601;</span>
+                </div>
+            </li>
+            <li class="songlist_li">
+                <span class="num">2</span>
+                <span class="song_name"></span>
+                <span class="ar_name"></span>
+                <span class="al_name"></span>
+                <!-- <span class="time"></span> -->
+                <div class="icon_box">
+                    <span class="iconfont icon_play">&#xe60f;</span>
+                    <span class="iconfont">&#xe602;</span>
+                    <span class="iconfont">&#xe647;</span>
+                    <span class="iconfont">&#xe601;</span>
+                </div>
+            </li>
+            <li class="songlist_li">
+                <span class="num">3</span>
+                <span class="song_name"></span>
+                <span class="ar_name"></span>
+                <span class="al_name"></span>
+                <!-- <span class="time"></span> -->
+                <div class="icon_box">
+                    <span class="iconfont icon_play">&#xe60f;</span>
+                    <span class="iconfont">&#xe602;</span>
+                    <span class="iconfont">&#xe647;</span>
+                    <span class="iconfont">&#xe601;</span>
+                </div>
+            </li>
+            <li class="songlist_li">
+                <span class="num">4</span>
+                <span class="song_name"></span>
+                <span class="ar_name"></span>
+                <span class="al_name"></span>
+                <!-- <span class="time"></span> -->
+                <div class="icon_box">
+                    <span class="iconfont icon_play">&#xe60f;</span>
+                    <span class="iconfont">&#xe602;</span>
+                    <span class="iconfont">&#xe647;</span>
+                    <span class="iconfont">&#xe601;</span>
+                </div>
+            </li>
+            <li class="songlist_li">
+                <span class="num">5</span>
+                <span class="song_name"></span>
+                <span class="ar_name"></span>
+                <span class="al_name"></span>
+                <!-- <span class="time"></span> -->
+                <div class="icon_box">
+                    <span class="iconfont icon_play">&#xe60f;</span>
+                    <span class="iconfont">&#xe602;</span>
+                    <span class="iconfont">&#xe647;</span>
+                    <span class="iconfont">&#xe601;</span>
+                </div>
+            </li>
+            <li class="songlist_li">
+                <span class="num">6</span>
+                <span class="song_name"></span>
+                <span class="ar_name"></span>
+                <span class="al_name"></span>
+                <!-- <span class="time"></span> -->
+                <div class="icon_box">
+                    <span class="iconfont icon_play">&#xe60f;</span>
+                    <span class="iconfont">&#xe602;</span>
+                    <span class="iconfont">&#xe647;</span>
+                    <span class="iconfont">&#xe601;</span>
+                </div>
+            </li>
+            <li class="songlist_li">
+                <span class="num">7</span>
+                <span class="song_name"></span>
+                <span class="ar_name"></span>
+                <span class="al_name"></span>
+                <!-- <span class="time"></span> -->
+                <div class="icon_box">
+                    <span class="iconfont icon_play">&#xe60f;</span>
+                    <span class="iconfont">&#xe602;</span>
+                    <span class="iconfont">&#xe647;</span>
+                    <span class="iconfont">&#xe601;</span>
+                </div>
+            </li>
+            <li class="songlist_li">
+                <span class="num">8</span>
+                <span class="song_name"></span>
+                <span class="ar_name"></span>
+                <span class="al_name"></span>
+                <!-- <span class="time"></span> -->
+                <div class="icon_box">
+                    <span class="iconfont icon_play">&#xe60f;</span>
+                    <span class="iconfont">&#xe602;</span>
+                    <span class="iconfont">&#xe647;</span>
+                    <span class="iconfont">&#xe601;</span>
+                </div>
+            </li>
+            <li class="songlist_li">
+                <span class="num">9</span>
+                <span class="song_name"></span>
+                <span class="ar_name"></span>
+                <span class="al_name"></span>
+                <!-- <span class="time"></span> -->
+                <div class="icon_box">
+                    <span class="iconfont icon_play">&#xe60f;</span>
+                    <span class="iconfont">&#xe602;</span>
+                    <span class="iconfont">&#xe647;</span>
+                    <span class="iconfont">&#xe601;</span>
+                </div>
+            </li>
+            <li class="songlist_li">
+                <span class="num">10</span>
+                <span class="song_name"></span>
+                <span class="ar_name"></span>
+                <span class="al_name"></span>
+                <!-- <span class="time"></span> -->
+                <div class="icon_box">
+                    <span class="iconfont icon_play">&#xe60f;</span>
+                    <span class="iconfont">&#xe602;</span>
+                    <span class="iconfont">&#xe647;</span>
+                    <span class="iconfont">&#xe601;</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 歌单评论部分 -->
+    <div class="review_all">
+        <div class="input">
+            <h1 id="review_c">评论</h1>
+            <input type="text" placeholder="谈谈你的看法" class="review_input">
+            <button class="send">发表评论</button>
+        </div>
+        <!-- 热门评论部分 -->
+        <div class="hot_review">
+            <h4>热门评论</h4>
+            <ul class="hots">
+                <p class="hots_warn"></p>
+                <li>
+                    <img src="" alt="" class="hot_img">
+                    <p class="hot_name"></p>
+                    <p class="hot_content"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="hot_img">
+                    <p class="hot_name"></p>
+                    <p class="hot_content"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="hot_img">
+                    <p class="hot_name"></p>
+                    <p class="hot_content"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="hot_img">
+                    <p class="hot_name"></p>
+                    <p class="hot_content"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="hot_img">
+                    <p class="hot_name"></p>
+                    <p class="hot_content"></p>
+                </li>
+            </ul>
+        </div>
+        <!-- 最新评论部分 -->
+        <div class="new_review">
+            <h4>最新评论</h4>
+            <ul class="news">
+                <p class="news_warn"></p>
+                <li>
+                    <img src="" alt="" class="new_img">
+                    <p class="new_name"></p>
+                    <p class="new_content"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="new_img">
+                    <p class="new_name"></p>
+                    <p class="new_content"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="new_img">
+                    <p class="new_name"></p>
+                    <p class="new_content"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="new_img">
+                    <p class="new_name"></p>
+                    <p class="new_content"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="new_img">
+                    <p class="new_name"></p>
+                    <p class="new_content"></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 右端部分 -->
+    <div class="banner_right">
+        <!-- 该歌单的简介 -->
+        <div class="brief_intro">
+            <p>简介：</p>
+            <ul class="brief"></ul>
+        </div>
+        <!-- 喜欢该歌单的用户 -->
+        <div class="love_users">
+            <h4>喜欢这个歌单的人</h4>
+            <p class="love_warn"></p>
+            <ul class="user_box">
+                <li><img src="" alt="" class="user_img"></li>
+                <li><img src="" alt="" class="user_img"></li>
+                <li><img src="" alt="" class="user_img"></li>
+                <li><img src="" alt="" class="user_img"></li>
+                <li><img src="" alt="" class="user_img"></li>
+                <li><img src="" alt="" class="user_img"></li>
+                <li><img src="" alt="" class="user_img"></li>
+                <li><img src="" alt="" class="user_img"></li>
+            </ul>
+        </div>
+        <!-- 相关歌单推荐 -->
+        <div class="relevantlist">
+            <h4>相关推荐</h4>
+            <ul>
+                <li>
+                    <img src="" alt="" class="rel_img">
+                    <p class="rel_name"></p>
+                    <p class="rel_arname"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="rel_img">
+                    <p class="rel_name"></p>
+                    <p class="rel_arname"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="rel_img">
+                    <p class="rel_name"></p>
+                    <p class="rel_arname"></p>
+                </li>
+                <li>
+                    <img src="" alt="" class="rel_img">
+                    <p class="rel_name"></p>
+                    <p class="rel_arname"></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- 底端部分 -->
+<footer style="margin-top: 2560px;">
+    <div class="footer_all">
+        <div class="footer_left">
+            <p>下载DOG音乐客户端</p>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="iconfont pic">&#xe609;</span>
+                        <span>PC版</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont pic">&#xe689;</span>
+                        <span>Mac版</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont pic">&#xeaa3;</span>
+                        <span>Android版</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont pic">&#xe624;</span>
+                        <span>iPhone版</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_middle">
+            <p>特色产品</p>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="iconfont pic">&#xe609;</span>
+                        <span>PC版</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont pic">&#xe689;</span>
+                        <span>Mac版</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont pic">&#xeaa3;</span>
+                        <span>Android版</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="iconfont pic">&#xe624;</span>
+                        <span>iPhone版</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_right">
+            <p>合作链接</p>
+            <ul>
+                <li><a href="#">CJ ENM</a></li>
+                <li><a href="#">腾讯视频</a></li>
+                <li><a href="#">手机QQ空间</a></li>
+                <li><a href="#">最新版QQ</a></li>
+                <li><a href="#">腾讯社交广告</a></li>
+                <li><a href="#">电脑管家</a></li>
+                <li><a href="#">QQ浏览器</a></li>
+                <li><a href="#">腾讯微云</a></li>
+                <li><a href="#">腾讯云</a></li>
+                <li><a href="#">企鹅FM</a></li>
+                <li><a href="#">智能电视网</a></li>
+                <li><a href="#">当贝市场</a></li>
+            </ul>
+        </div>
+        <div class="footer_box1">
+            <p>开放平台</p>
+            <a href="#">DOG音乐开放平台</a>
+            <a href="#">腾讯音乐人</a>
+        </div>
+        <div class="footer_box1">
+            <p>TME集团官网</p>
+            <a href="#">腾讯音乐</a>
+        </div>
+        <div class="bottom">
+            <p>
+                <a href="#">关于腾讯</a>
+                |
+                <a href="#">About Tencent</a>
+                |
+                <a href="#">服务条款</a>
+                |
+                <a href="#">用户服务协议</a>
+                |
+                <a href="#">隐私政策</a>
+                |
+                <a href="#">权力声明</a>
+                |
+                <a href="#">广告服务</a>
+                |
+                <a href="#">腾讯招聘</a>
+                |
+                <a href="#">客服中心</a>
+                |
+                <a href="#">网站导航</a>
+            </p>
+            <p>
+                Copyright © 1998 - 2021 Tencent.
+                <a href="#">All Rights Reserved.</a>
+            </p>
+            <p>
+                腾讯公司
+                <a href="#">版权所有</a>
+                网络文化经营许可证：
+                <a href="#">粤网文[2018]6725-2386号</a>
+            </p>
+        </div>
+    </div>
+
+</footer>
+<script src="./js/search.js"></script>
+<script src="./js/server.js"></script>
+<script src="./js/my_music.js"></script>
+<script src="./js/base.js"></script>
+<script src="./js/index_song.js"></script>
+<script src="./js/songlist.js"></script>
+
+<body>
+
+</body>
+
+</html>

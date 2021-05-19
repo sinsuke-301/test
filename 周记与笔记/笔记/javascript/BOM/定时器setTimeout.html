@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="shubiao.gif" alt="" class="ad">
+    <script>
+        //1.window在调用时可省略
+        //2.延时时间单位是毫秒 可省略
+        //3.调用函数可以直接写函数或写函数名 如下列所示
+        // setTimeout(function() {
+        //     console.log('时间到了');
+        // })
+        function callback() {
+            console.log('爆炸了');
+        }
+        var timer1 = setTimeout(callback, 3000);
+        var timer2 = setTimeout(callback, 5000);
+        var ad = document.querySelector('.ad');
+        setTimeout(function () {
+            ad.style.display = 'none';
+        }, 5000);
+        //5秒后关闭的广告
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        .two {
+            width: 50px;
+            height: 50px;
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one">
+        <div class="two"></div>
+    </div>
+    <script>
+        var one = document.querySelector('.one');
+        div.addEventListener('mousedown', function (e) {
+            var x = e.pageX - div.offsetLeft;
+            var y = e.pageY - div.offsetTop;
+            document.addEventListener('mousemove', move)
+            function move(e) {
+                div.style.left = e.pageX - x + 'px';
+                div.style.right = e.pageY - y + 'px';
+            }
+            document.addEventListener('mouseup', function () {
+                document.removeEventListener('mousemove', move);
+            })
+        })
+    </script>
+</body>
+
+</html>

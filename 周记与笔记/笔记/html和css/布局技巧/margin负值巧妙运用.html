@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            position: relative;
+            float: left;
+            list-style: none;
+            width: 200px;
+            height: 300px;
+            border: 1px solid red;
+            margin-left: -1px;
+            /* 将重合的线条变细 */
+        }
+
+        ul li:hover {
+            /* 若盒子没有定位，添加相对定位即可 */
+            /* position: relative; */
+            border: 1px solid blue;
+            z-index: 1;
+            /* 提高层级 */
+            /* 注意：需要li有定位才能使用 */
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+
+</html>

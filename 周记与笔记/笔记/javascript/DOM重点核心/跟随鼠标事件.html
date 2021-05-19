@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="shubiao.gif" alt="">
+    <script>
+        var pic = document.querySelector('img');
+        document.addEventListener('mousemove', function (e) {
+            //1.mousemove鼠标移动1px，就会触发这个事件
+            // console.log(1);
+            //2.核心原理：每次鼠标移动，都会获得新的鼠标坐标，把x和y作为图片的top和left就可以移动图片
+            var x = e.pageX;
+            var y = e.pageY;
+            pic.style.left = x - 40 + 'px';
+            pic.style.top = y - 40 + 'px';//注意要加单位！！！
+        })
+    </script>
+</body>
+
+</html>
