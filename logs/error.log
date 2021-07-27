@@ -18,3 +18,4 @@
 2021/05/19 15:51:48 [emerg] 11768#11752: CreateFile() "C:\Users\82068\Desktop\text\¶þÂÖ¿¼ºË/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
 2021/05/19 15:53:25 [emerg] 12764#8656: CreateFile() "C:\Users\82068\Desktop\text\¶þÂÖ¿¼ºË/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
 2021/05/19 15:54:05 [emerg] 15636#14172: CreateFile() "C:\Users\82068\Desktop\text\¶þÂÖ¿¼ºË/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2021/05/29 20:41:11 [error] 9812#10152: *2 CreateFile() "C:\Users\82068\Desktop\test\test/cat/null" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /null HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/play.html"
